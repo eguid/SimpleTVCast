@@ -1,0 +1,30 @@
+name: Sync from Gitee
+
+on:
+  schedule:
+    # 每天 UTC 0 点运行（北京时间早上 8 点）
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0 # 拉取完整历史，便于合并
+
+      - name: Sync from Gitee
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+        with:
+          # 你 GitHub 仓库中要同步的分支（通常是 main 或 master）
+          target_sync_branch: master
+          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # ⚠️ 关键：把下面这行改成 Gitee 仓库的 HTTPS 地址
+          upstream_sync_repo: https://gitee.com/eguid/SimpleTVCast.git
+
+          # ⚠️ 关键：把下面这行改成 Gitee 仓库的默认分支（通常是 master 或 main）
+          upstream_sync_branch: master
