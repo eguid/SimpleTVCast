@@ -1,3 +1,4 @@
+This is a mirror of [https://gitee.com/eguid/SimpleTVCast]. Please do not submit PRs here.
 # 自由无线投屏（FreeWirelessCast，曾用名：简单电视投屏，SimpleTVCast）
 ”自由无线投屏（FreeWirelessCast，曾用名：简单电视投屏，SimpleTVCast）“一款免费、无广告的纯净无线投屏工具，支持电脑桌面镜像投屏和本地视频文件投屏、音乐投屏、网络多媒体投屏、图片轮播投屏等多种电视投屏方式。
 
