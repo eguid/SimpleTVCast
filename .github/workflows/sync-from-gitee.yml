@@ -30,3 +30,4 @@ jobs:
 
           # ⚠️ 关键：把下面这行改成 Gitee 仓库的默认分支（通常是 master 或 main）
           upstream_sync_branch: master
+          upstream_pull_args: '--allow-unrelated-histories'
