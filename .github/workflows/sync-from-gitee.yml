@@ -17,7 +17,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0 # 拉取完整历史，便于合并
-
+          ref: master  # 显式指定检出 master 分支
       - name: Sync from Gitee
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
         with:
