@@ -1591,6 +1591,46 @@ body::after {
   border-bottom-color: var(--gold);
 }
 
+/* 独立下载页 */
+.dl-title {
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+}
+
+.dl-picked {
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+}
+
+.dl-card.is-active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(201, 166, 107, 0.32);
+}
+
+.dl-card.is-active .dl-badge {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.dl-cat {
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(201, 166, 107, 0.78);
+}
+
+.dl-actions {
+  display: grid;
+  gap: 10px;
+}
+
 /* ---------- 13. 隐私承诺 ---------- */
 .privacy-grid {
   display: grid;
@@ -1708,6 +1748,11 @@ body::after {
 
 .footer-bottom a:hover {
   color: var(--paper);
+}
+
+/* 独立下载页页脚：仅保留底部信息条 */
+.site-footer-compact {
+  padding-top: 0;
 }
 
 /* ---------- 15. 滚动揭示 ---------- */
