@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>简单电视投屏（SimpleTVCast） · 投屏，只需要一个按钮</title>
+<meta name="description" content="简单电视投屏（SimpleTVCast） 是一款免费、无广告、零数据上传的 Windows 电视投屏工具。无需安装电视端 App，同一局域网内（同一Wi-Fi、同一有线网络） 下即开即投，支持桌面镜像、PPT 演示、本地视频音乐图片与网络流媒体投屏。">
+<meta property="og:title" content="简单电视投屏（SimpleTVCast）">
+<meta property="og:description" content="免费、无广告、零数据上传的 Windows 电视投屏工具，无需电视端 App，即开即投。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/logo.png">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="stylesheet" href="assets/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "简单电视投屏（SimpleTVCast）",
+  "operatingSystem": "Windows",
+  "applicationCategory": "MultimediaApplication",
+  "description": "免费、无广告、零数据上传的 Windows 电视投屏工具，无需电视端 App，支持桌面镜像、PPT 演示、本地多媒体与网络流媒体投屏。",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="简单电视投屏 首页">
+      <img src="assets/img/logo.png" alt="" width="40" height="40" aria-hidden="true">
+      <span class="brand-text">简单电视投屏<em>SimpleTVCast</em></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#why">为何简单</a>
+      <a href="#features">投屏方式</a>
+      <a href="#compare">能力对比</a>
+      <a href="#devices">设备支持</a>
+      <a href="#changelog">更新日志</a>
+    </nav>
+    <div class="header-actions">
+      <a class="ghost-link" href="https://github.com/eguid/SimpleTVCast" target="_blank" rel="noopener">GitHub</a>
+      <a class="ghost-link" href="https://gitee.com/eguid/SimpleTVCast" target="_blank" rel="noopener">Gitee</a>
+      <a class="btn btn-ghost" href="#download">下载</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="打开导航菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav" hidden>
+  <nav aria-label="移动端导航">
+    <a href="#why">为何简单</a>
+    <a href="#features">投屏方式</a>
+    <a href="#compare">能力对比</a>
+    <a href="#devices">设备支持</a>
+    <a href="#changelog">更新日志</a>
+    <a href="#download">下载与安装</a>
+    <a href="https://github.com/eguid/SimpleTVCast" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- 01 首屏 -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">简单电视投屏（SimpleTVCast） · 免费 · 无广告 · 零上传</p>
+        <h1>投屏，<br>只需要<span class="accent">一个按钮</span>。</h1>
+        <p class="lede">Windows 端电视投屏工具，无需安装电视 App，同一局域网内（连接同一个无线Wi-Fi或同一个以太网有线网络） 下即开即投。免费商用、无水印、不限制画质与投屏台数。</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold btn-lg" href="#download">下载 Windows 版</a>
+          <a class="btn btn-text" href="#download">查看安装说明 <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="hero-tags">
+          <li>免费商用</li>
+          <li>无广告无水印</li>
+          <li>不限画质与台数</li>
+          <li>零数据上传</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="screen screen--tall" id="heroScreen">
+          <img src="assets/img/ui-6.0.3.png" alt="简单电视投屏 6.0.3 主界面：内置服务状态正常，已发现局域网内的 DLNA 无线显示设备" width="415" height="760">
+          <span class="screen-glow" aria-hidden="true"></span>
+          <span class="cast-fx" aria-hidden="true">
+            <span class="fx fx-scan"></span>
+            <span class="fx fx-slide"></span>
+            <span class="fx fx-bars"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="fx fx-progress"></span>
+          </span>
+          <span class="cast-status"><span class="dot" aria-hidden="true"></span><span id="castStatusText">投屏中</span></span>
+        </div>
+        <div class="float-chip float-chip--a"><span class="dot" aria-hidden="true"></span>已发现 <b>客厅电视</b></div>
+        <div class="float-chip float-chip--b">服务端口 <b>1900</b> · 正常</div>
+
+        <div class="hero-dock" role="group" aria-label="模拟投屏方式">
+          <button class="dock-btn" type="button" data-cast-mode="mirror" aria-label="实时桌面镜像投屏" aria-pressed="false" title="实时桌面镜像投屏">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"></rect><path d="M9 20h6M12 16.5V20"></path></svg>
+          </button>
+          <button class="dock-btn" type="button" data-cast-mode="ppt" aria-label="PPT 演示投屏" aria-pressed="false" title="PPT 演示投屏">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"></rect><path d="M10.4 7.6l4.2 2.8-4.2 2.8z"></path><path d="M9 20h6M12 16.5V20"></path></svg>
+          </button>
+          <button class="dock-btn" type="button" data-cast-mode="stream" aria-label="网络多媒体投屏" aria-pressed="false" title="网络多媒体投屏">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17"></path><path d="M12 3.5c2.6 2.4 3.9 5.3 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.3-3.9-8.5s1.3-6.1 3.9-8.5z"></path></svg>
+          </button>
+          <button class="dock-btn" type="button" data-cast-mode="local" aria-label="本地多媒体投屏" aria-pressed="false" title="本地多媒体投屏">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5a1.8 1.8 0 0 1 1.8-1.8h4.1l1.8 1.9h8.5A1.8 1.8 0 0 1 21 9.4v8.1a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 17.5z"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <a class="scroll-hint" href="#why"><span>继续了解</span><span aria-hidden="true">↓</span></a>
+  </section>
+
+  <!-- 02 为何简单 -->
+  <section class="section why" id="why">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">01 / 为何简单</p>
+        <h2>把投屏做成“开关”一样简单</h2>
+        <p class="section-sub">不需要投屏器，不需要扫码配对，不需要电视端装任何 App。电视开机联网，电脑点一下，画面就到了。</p>
+      </header>
+
+      <div class="pillars">
+        <article class="pillar reveal">
+          <span class="pillar-no">01</span>
+          <h3>即开即投</h3>
+          <p>软件打开后自动发现同一局域网内（连接同一个无线Wi-Fi或同一网段的以太网有线网络）的无线显示设备，点击设备旁的投屏图标即可开始投屏。</p>
+        </article>
+        <article class="pillar reveal">
+          <span class="pillar-no">02</span>
+          <h3>无需电视安装App</h3>
+          <p>基于 DLNA / AirPlay 协议直接与电视通信，电视开机联网即可投屏，无需进入电视的投屏配对界面，也无需电视端确认。</p>
+        </article>
+        <article class="pillar reveal">
+          <span class="pillar-no">03</span>
+          <h3>免费且纯净</h3>
+          <p>免费、无广告、无水印、不限制画质、不限制投屏数量；</p>
+             <p>保护隐私安全，不记录、不上传投屏内容与使用习惯，零数据收集。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 投屏方式 -->
+  <section class="section features" id="features">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">02 / 投屏方式</p>
+        <h2>六种投屏方式</h2>
+        <p class="section-sub">从实时桌面镜像到PPT演示投屏、再到网络直播，每个方式都有其适用场景。</p>
+      </header>
+
+      <div class="feature-grid">
+        <div class="feature-tabs reveal" role="tablist" aria-label="投屏方式" aria-orientation="vertical">
+          <button class="tab is-active" id="tab-mirror" type="button" role="tab" aria-selected="true" aria-controls="panel-mirror" tabindex="0">
+            <span class="tab-no">01</span>
+            <span class="tab-body"><span class="tab-label">桌面镜像</span><span class="tab-desc">低延迟 · 独创投屏技术 · 无需电视安装App</span></span>
+          </button>
+          <button class="tab" id="tab-ppt" type="button" role="tab" aria-selected="false" aria-controls="panel-ppt" tabindex="-1">
+            <span class="tab-no">02</span>
+            <span class="tab-body"><span class="tab-label">PPT 演示投屏</span><span class="tab-desc">课件与会议报告 · 低资源占用</span></span>
+          </button>
+          <button class="tab" id="tab-local" type="button" role="tab" aria-selected="false" aria-controls="panel-local" tabindex="-1">
+            <span class="tab-no">03</span>
+            <span class="tab-body"><span class="tab-label">本地多媒体</span><span class="tab-desc">视频文件 · 音乐文件 · 图片文件轮播</span></span>
+          </button>
+          <button class="tab" id="tab-stream" type="button" role="tab" aria-selected="false" aria-controls="panel-stream" tabindex="-1">
+            <span class="tab-no">04</span>
+            <span class="tab-body"><span class="tab-label">网络流媒体</span><span class="tab-desc">视频直播 · 网络视频 / 网络音乐 / 网络图片</span></span>
+          </button>
+          <button class="tab" id="tab-cast" type="button" role="tab" aria-selected="false" aria-controls="panel-cast" tabindex="-1">
+            <span class="tab-no">05</span>
+            <span class="tab-body"><span class="tab-label">手机投送到电脑</span><span class="tab-desc">安卓 / iOS / 平板 · DLNA / AirPlay 协议</span></span>
+          </button>
+          <button class="tab" id="tab-airplay" type="button" role="tab" aria-selected="false" aria-controls="panel-airplay" tabindex="-1">
+            <span class="tab-no">06</span>
+            <span class="tab-body"><span class="tab-label">电脑投电脑</span><span class="tab-desc">支持其他电脑投屏到已经安装 简单电视投屏（SimpleTVCast）  的电脑（需要开启接收功能）注意：此功能并非远程桌面，只是局域网内部分享桌面屏幕和多媒体</span></span>
+          </button>
+        </div>
+
+        <div class="feature-stage reveal">
+          <div class="stage-panel is-active" id="panel-mirror" role="tabpanel" aria-labelledby="tab-mirror">
+            <div class="screen screen--wide screen--mock">
+              <div class="mock-inner">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="24" rx="2"/><path d="M24 32v7M16 39h16"/><path d="M14 15h20M30 11l4 4-4 4"/><path d="M34 25H14M18 21l-4 4 4 4"/></svg>
+                <p class="mock-title">实时桌面镜像</p>
+                <p class="mock-sub">把整个桌面或指定窗口的低延迟画面投到电视，支持多显示器选择、剪裁区域与分辨率 / 帧率 / 码率调整。</p>
+                <ul class="mock-chips"><li>低延迟</li><li>系统声音同步</li><li>多显示器选择</li></ul>
+              </div>
+            </div>
+            <p class="stage-note">实时采集桌面并编码为直播流下发给电视，支持多显示器选择、剪裁区域与分辨率 / 帧率 / 码率调整。</p>
+          </div>
+
+          <div class="stage-panel" id="panel-ppt" role="tabpanel" aria-labelledby="tab-ppt" hidden>
+            <div class="screen screen--wide screen--mock">
+              <div class="mock-inner">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="24" rx="2"/><path d="M24 34v6M16 40h16"/><path d="M14 18h20M14 24h12"/></svg>
+                <p class="mock-title">PPT 演示投屏</p>
+                <p class="mock-sub">为教学课件、会议室报告设计的演示投屏，设备列表显示为投影幕布图标。</p>
+                <ul class="mock-chips"><li>超低资源占用</li><li>每秒推送帧率可调</li><li>适合长时间演示</li></ul>
+              </div>
+            </div>
+            <p class="stage-note">与实时屏幕镜像互斥，按帧率推送画面，显著降低长时间演示时的 CPU 与 GPU 占用。</p>
+          </div>
+
+          <div class="stage-panel" id="panel-local" role="tabpanel" aria-labelledby="tab-local" hidden>
+            <div class="screen screen--wide screen--mock">
+              <div class="mock-inner">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="7" width="34" height="34" rx="3"/><path d="M20 16l14 8-14 8z"/><path d="M7 34h34"/></svg>
+                <p class="mock-title">视频 · 音乐 · 图片</p>
+                <p class="mock-sub">选择目录后自动扫描媒体文件，支持连续投屏、图片轮播与单首无限循环。</p>
+                <ul class="mock-chips"><li>自动转换不支持的编码</li><li>播放进度记忆</li><li>图片轮播循环</li></ul>
+              </div>
+            </div>
+            <p class="stage-note">支持 mkv、avi、AV1 等电视不直接支持的格式自动转码；播放列表与进度会在下次打开时自动还原。</p>
+          </div>
+
+          <div class="stage-panel" id="panel-stream" role="tabpanel" aria-labelledby="tab-stream" hidden>
+            <div class="screen screen--wide screen--mock">
+              <div class="mock-inner">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M7 24h34"/><ellipse cx="24" cy="24" rx="8" ry="17"/></svg>
+                <p class="mock-title">网络流媒体投屏</p>
+                <p class="mock-sub">粘贴网络视频地址即可直投电视，支持 RTSP、RTMP、HTTP-FLV、HLS、Dash 等常见协议。</p>
+                <ul class="mock-chips"><li>地址直投</li><li>自动保存历史</li><li>最多 20 条记录</li></ul>
+              </div>
+            </div>
+            <p class="stage-note">支持 RTSP、RTMP、HTTP-FLV、HLS、Dash 等网络地址直投；投送过的地址自动保存为历史，最多 20 条。</p>
+          </div>
+
+          <div class="stage-panel" id="panel-cast" role="tabpanel" aria-labelledby="tab-cast" hidden>
+            <div class="screen screen--wide screen--mock">
+              <div class="mock-inner">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="6" width="18" height="32" rx="3"/><rect x="28" y="12" width="14" height="20" rx="2"/><path d="M30 38c6-2 10-6 12-12"/></svg>
+                <p class="mock-title">手机投送到电脑</p>
+                <p class="mock-sub">安卓、iOS、平板与电脑通过 DLNA 协议投送到本软件，实时显示对方的内容和画面。</p>
+                <ul class="mock-chips"><li>无需手机端安装软件</li><li>被动接收</li><li>多设备同时投送</li></ul>
+              </div>
+            </div>
+            <p class="stage-note">本软件也能作为接收端：手机相册、视频 App 里的「投屏」按钮即可选中电脑所在设备。</p>
+          </div>
+
+          <div class="stage-panel" id="panel-airplay" role="tabpanel" aria-labelledby="tab-airplay" hidden>
+            <div class="screen screen--wide screen--mock">
+              <div class="mock-inner">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="3" y="10" width="18" height="13" rx="2"/><path d="M8 31h8M12 23v8"/><rect x="27" y="10" width="18" height="13" rx="2"/><path d="M32 31h8M36 23v8"/><path d="M22 16h4M24 14l2 2-2 2"/></svg>
+                <p class="mock-title">电脑投电脑</p>
+                <p class="mock-sub">在接收端开启接收功能后，局域网内其他电脑即可把桌面画面或多媒体投送到本机，用于同网段内的屏幕分享。</p>
+                <ul class="mock-chips"><li>需开启接收功能</li><li>局域网内分享</li><li>并非远程桌面</li></ul>
+              </div>
+            </div>
+            <p class="stage-note">仅共享画面与多媒体，不提供键鼠控制；投送端与接收端需处于同一局域网，接收功能需在软件中手动开启。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 能力对比 -->
+  <section class="section compare" id="compare">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">03 / 能力对比</p>
+        <h2>同样一台电视，少走几步</h2>
+        <p class="section-sub">对照系统自带投屏与常见商业投屏软件，看看「简单」到底省在哪一步。</p>
+      </header>
+
+      <div class="meters reveal" aria-hidden="true">
+        <div class="meter">
+          <p class="meter-label">简单电视投屏（SimpleTVCast）</p>
+          <div class="meter-track"><span class="meter-fill" data-value="100"></span></div>
+          <p class="meter-value">8 / 8</p>
+        </div>
+        <div class="meter">
+          <p class="meter-label">系统自带投屏</p>
+          <div class="meter-track"><span class="meter-fill" data-value="50"></span></div>
+          <p class="meter-value">4 / 8</p>
+        </div>
+        <div class="meter">
+          <p class="meter-label">常见商业投屏</p>
+          <div class="meter-track"><span class="meter-fill" data-value="12.5"></span></div>
+          <p class="meter-value">1 / 8</p>
+        </div>
+      </div>
+
+      <div class="table-scroll reveal">
+        <table class="compare-table">
+          <caption class="visually-hidden">投屏能力对比：简单电视投屏、系统自带投屏与常见商业投屏软件</caption>
+          <thead>
+            <tr>
+              <th scope="col">能力项</th>
+              <th scope="col" class="is-brand">简单电视投屏（SimpleTVCast）</th>
+              <th scope="col">系统自带投屏</th>
+              <th scope="col">常见商业投屏</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">免费、无广告</th>
+              <td class="is-brand"><span class="mark mark-yes">支持</span></td>
+              <td><span class="mark mark-yes">支持</span></td>
+              <td><span class="mark mark-part">部分</span></td>
+            </tr>
+            <tr>
+              <th scope="row">无需电视端 App、无需扫码配对</th>
+              <td class="is-brand"><span class="mark mark-yes">支持</span></td>
+              <td><span class="mark mark-yes">支持</span></td>
+              <td><span class="mark mark-part">部分</span></td>
+            </tr>
+            <tr>
+              <th scope="row">桌面镜像 + 系统声音同步</th>
+              <td class="is-brand"><span class="mark mark-yes">支持</span></td>
+              <td><span class="mark mark-part">部分</span></td>
+              <td><span class="mark mark-part">部分</span></td>
+            </tr>
+            <tr>
+              <th scope="row">视频 / 音乐 / 图片投屏</th>
+              <td class="is-brand"><span class="mark mark-yes">支持</span></td>
+              <td><span class="mark mark-no">不支持</span></td>
+              <td><span class="mark mark-yes">支持</span></td>
+            </tr>
+            <tr>
+              <th scope="row">网络流媒体（直播 / RTSP / HLS）</th>
+              <td class="is-brand"><span class="mark mark-yes">支持</span></td>
+              <td><span class="mark mark-no">不支持</span></td>
+              <td><span class="mark mark-no">不支持</span></td>
+            </tr>
+            <tr>
+              <th scope="row">多台设备同时投屏</th>
+              <td class="is-brand"><span class="mark mark-yes">支持</span></td>
+              <td><span class="mark mark-no">不支持</span></td>
+              <td><span class="mark mark-part">部分</span></td>
+            </tr>
+            <tr>
+              <th scope="row">上传用户数据</th>
+              <td class="is-brand"><span class="mark mark-yes">无</span></td>
+              <td><span class="mark mark-yes">无</span></td>
+              <td><span class="mark mark-unknown">未知</span></td>
+            </tr>
+            <tr>
+              <th scope="row">限制画质、码率或投屏台数</th>
+              <td class="is-brand"><span class="mark mark-yes">不限制</span></td>
+              <td><span class="mark mark-yes">不限制</span></td>
+              <td><span class="mark mark-no">有限制</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note reveal">对比依据：软件 README 中的能力对比资料与公开信息整理，仅作定性参考；各产品功能以其官方说明为准。</p>
+    </div>
+  </section>
+
+  <!-- 05 设备支持 -->
+  <section class="section devices" id="devices">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">04 / 设备支持</p>
+        <h2>电视开机联网，就能投</h2>
+        <p class="section-sub">支持所有遵循 DLNA / AirPlay 协议的无线显示设备：智能电视、投影仪、机顶盒、智能音箱、投屏器、电子白板。</p>
+      </header>
+
+      <div class="device-grid">
+        <article class="device-card reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="24" rx="2"/><path d="M16 41h16M24 33v8"/></svg>
+          <h3>智能电视 / 智慧屏</h3>
+          <p>主流品牌全系列均可直接投送，2015 年后支持联网的电视基本无需额外设置。</p>
+          <p class="device-tag"><span class="dot" aria-hidden="true"></span>已验证</p>
+        </article>
+        <article class="device-card reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="16" width="26" height="16" rx="2"/><circle cx="38" cy="24" r="4"/><path d="M20 38h8"/></svg>
+          <h3>投影仪</h3>
+          <p>智能投影、家用投影与商用投影均可被发现，部分低端型号需用遥控器开启投屏开关。</p>
+          <p class="device-tag"><span class="dot" aria-hidden="true"></span>已验证</p>
+        </article>
+        <article class="device-card reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="12" width="32" height="18" rx="2"/><path d="M8 36h32M14 24h6"/></svg>
+          <h3>电视机顶盒</h3>
+          <p>移动、电信等运营商机顶盒，以及各类智能盒子，部分型号需手动开启无线投屏。</p>
+          <p class="device-tag"><span class="dot dot--warning" aria-hidden="true"></span>部分需手动设置</p>
+        </article>
+        <article class="device-card reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="8" width="24" height="32" rx="4"/><circle cx="24" cy="17" r="4"/><circle cx="24" cy="31" r="5"/></svg>
+          <h3>智能音箱（带屏幕和纯音频）</h3>
+          <p>带屏智能音箱可接收桌面镜像与视频投屏，普通智能音箱可接收纯音乐投屏。</p>
+          <p class="device-tag"><span class="dot" aria-hidden="true"></span>网友实测可用</p>
+        </article>
+        <article class="device-card reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="10" width="18" height="18" rx="2"/><path d="M32 24a8 8 0 0 1 8 8M30 18a14 14 0 0 1 14 14M34 36h8"/></svg>
+          <h3>无线投屏器</h3>
+          <p>主流品牌的投屏器可完整支持桌面镜像、视频、音乐、图片与直播投屏。</p>
+          <p class="device-tag"><span class="dot" aria-hidden="true"></span>网友实测可用</p>
+        </article>
+        <article class="device-card reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="24" rx="2"/><path d="M12 18h10M12 24h16M12 30h8"/></svg>
+          <h3>电子白板 / 显示器</h3>
+          <p>会议平板、交互式电子白板与部分支持 DLNA 的显示器同样可以接收投屏。</p>
+          <p class="device-tag"><span class="dot" aria-hidden="true"></span>网友实测可用</p>
+        </article>
+      </div>
+
+      <p class="device-note reveal">前提：投屏电脑与显示设备在同一网段。未列出的品牌仅代表未经测试，不代表不支持；电视开机联网即可，无需打开投屏配对界面。</p>
+    </div>
+  </section>
+
+  <!-- 06 更新日志 -->
+  <section class="section changelog" id="changelog">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">05 / 更新日志</p>
+        <h2>一直在变得更顺</h2>
+        <p class="section-sub">从 1.0 到 6.0，每一版都在减少操作、提高画质、压低延迟。</p>
+      </header>
+
+      <ol class="timeline reveal">
+        <li class="tl-item is-latest">
+          <div class="tl-head"><span class="tl-version">v6.0.3-beta</span><span class="tl-badge">最新</span></div>
+          <ul>
+            <li>极低延迟的实时镜像投屏，可替代原生 miracast 方案。</li>
+            <li>新增「镜像投屏」配置：分辨率上限、帧率、码率与 PPT 推送帧率。</li>
+            <li>修复多网卡切换后 SSDP 服务无法启动、停止投屏后电视端未及时停止等问题。</li>
+          </ul>
+        </li>
+        <li class="tl-item">
+          <div class="tl-head"><span class="tl-version">v6.0.2-beta</span></div>
+          <ul>
+            <li>全新独创实时屏幕镜像技术，画面变化不受限，多台设备共用同一路录制。</li>
+            <li>网络多媒体投屏回归，历史地址最多保留 20 条，单击填入、双击直投。</li>
+            <li>本地多媒体支持单首无限循环，新增启动自检与周年庆典界面风格。</li>
+          </ul>
+        </li>
+        <li class="tl-item">
+          <div class="tl-head"><span class="tl-version">v6.0.1-beta</span></div>
+          <ul>
+            <li>全新 PPT 演示投屏，设备列表显示投影幕布图标，帧率可调。</li>
+            <li>支持部分 AirPlay 协议与 AirPlay 被动投屏。</li>
+          </ul>
+        </li>
+        <li class="tl-item">
+          <div class="tl-head"><span class="tl-version">v6.0.0</span></div>
+          <ul>
+            <li>全新改版界面，支持图片轮播、音乐、视频等本地多媒体投屏。</li>
+            <li>支持多台设备同时投屏，支持 DLNA 被动投屏。</li>
+          </ul>
+        </li>
+        <li class="tl-item tl-extra" hidden>
+          <div class="tl-head"><span class="tl-version">v5.5.0</span></div>
+          <ul>
+            <li>开放本地 HTTP 接口，支持 AI 智能体调用投屏能力。</li>
+            <li>重构底层 UPnP / DLNA 库，统一 SSDP 设备发现。</li>
+          </ul>
+        </li>
+        <li class="tl-item tl-extra" hidden>
+          <div class="tl-head"><span class="tl-version">v4.0.0</span></div>
+          <ul>
+            <li>新增图片轮播投屏；桌面镜像支持分辨率、帧率、码率设置。</li>
+          </ul>
+        </li>
+        <li class="tl-item tl-extra" hidden>
+          <div class="tl-head"><span class="tl-version">v3.0.0</span></div>
+          <ul>
+            <li>新增网络多媒体投屏，支持 RTP、RTSP、RTMP、HTTP-FLV、HLS 等协议。</li>
+            <li>支持视频播放列表连续投屏。</li>
+          </ul>
+        </li>
+        <li class="tl-item tl-extra" hidden>
+          <div class="tl-head"><span class="tl-version">v2.0.0</span></div>
+          <ul>
+            <li>全新 UI 与软件架构，重构 UPnP / DLNA 底层，内置高并发流媒体服务。</li>
+            <li>支持中文路径与中文视频投屏，自动释放 1900 端口占用。</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="timeline-actions reveal">
+        <button class="btn btn-ghost" type="button" id="timelineToggle" aria-expanded="false" aria-controls="extraVersions">展开更早版本</button>
+        <a class="btn btn-text" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener">查看完整更新日志 <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 下载与安装 -->
+  <section class="section download" id="download">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">06 / 下载与安装</p>
+        <h2>下载，安装，点一下</h2>
+        <p class="section-sub">两个安装包，按需选择。
+          <p>支持windows vista以上包括（windows7、windows8、windows10、windows11）</p>
+        </p>
+      </header>
+
+      <div class="download-grid">
+        <article class="dl-card reveal">
+          <span class="dl-badge">推荐</span>
+          <h3>SimpleTVCast.zip</h3>
+          <p class="dl-desc">绿色免安装版，内置运行环境。解压后直接双击目录内的 SimpleTVCast.exe 即可运行。</p>
+          <a class="btn btn-gold" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener">下载绿色版</a>
+        </article>
+        <article class="dl-card reveal">
+          <h3>SimpleTVCast.msi</h3>
+          <p class="dl-desc">Windows 安装包，双击运行安装向导，自动创建桌面快捷方式并注册卸载入口。</p>
+          <a class="btn btn-outline" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener">下载安装包</a>
+        </article>
+      </div>
+
+      <ol class="steps reveal">
+        <li><span class="step-no">1</span><div><h3>下载</h3><p>在 Release 附件中下载 zip 或 msi。</p></div></li>
+        <li><span class="step-no">2</span><div><h3>解压或安装</h3><p>zip 解压即用；msi 双击安装。两者均无需 Java 环境。</p></div></li>
+        <li><span class="step-no">3</span><div><h3>选择设备，开始投屏</h3><p>等待自动发现电视，点击设备旁的投屏图标即可开始。</p></div></li>
+      </ol>
+
+      <p class="dl-note reveal">备用下载渠道：<a href="https://gitee.com/eguid/SimpleTVCast" target="_blank" rel="noopener">Gitee 仓库</a>；内测与问题反馈：QQ 群 1092312834。软件免费商用，不限制功能与投屏台数。</p>
+    </div>
+  </section>
+
+  <!-- 08 隐私承诺 -->
+  <section class="section privacy" id="privacy">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">07 / 隐私承诺</p>
+        <h2>不上传，也不需要上传</h2>
+        <p class="section-sub">软件完全离线运行，仅在局域网内按 DLNA 协议发送必要信号。以下承诺可自行验证。</p>
+      </header>
+
+      <div class="privacy-grid">
+        <article class="privacy-item reveal">
+          <span class="privacy-no">01</span>
+          <h3>不自动连接互联网</h3>
+          <p>仅在「关于软件」「软件更新」时访问官网检查版本号，其余时间不与任何互联网服务器通信。</p>
+        </article>
+        <article class="privacy-item reveal">
+          <span class="privacy-no">02</span>
+          <h3>仅限局域网</h3>
+          <p>只在主动 / 被动发现设备与投屏时，在家庭或办公局域网内发送 DLNA 必要信号。</p>
+        </article>
+        <article class="privacy-item reveal">
+          <span class="privacy-no">03</span>
+          <h3>零数据收集</h3>
+          <p>不收集、不记录、不上传任何个人信息、投屏内容、文件列表或使用习惯。</p>
+        </article>
+        <article class="privacy-item reveal">
+          <span class="privacy-no">04</span>
+          <h3>可验证</h3>
+          <p>可用系统自带防火墙或网络监控工具观察软件的全部网络行为，欢迎监督。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/logo.png" alt="" width="36" height="36" aria-hidden="true">
+      <p><strong>简单电视投屏</strong><br><span>SimpleTVCast · 免费、无广告、零上传的 Windows 投屏工具。</span></p>
+    </div>
+    <nav class="footer-col" aria-label="产品链接">
+      <h3>产品</h3>
+      <a href="#features">投屏方式</a>
+      <a href="#devices">设备支持</a>
+      <a href="#changelog">更新日志</a>
+      <a href="#download">下载与安装</a>
+    </nav>
+    <nav class="footer-col" aria-label="资源链接">
+      <h3>资源</h3>
+      <a href="https://github.com/eguid/SimpleTVCast" target="_blank" rel="noopener">GitHub 分流下载</a>
+      <a href="https://gitee.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener">Gitee 分流下载</a>
+      <a href="https://blog.csdn.net/eguid_1/article/details/166601279" target="_blank" rel="noopener">CSDN 备用下载</a>
+      <a href="https://pan.baidu.com/s/5yfEkEwj1QvCoi28gH5p5Jg" target="_blank" rel="noopener">百度网盘 备用下载</a>
+      <a href="#privacy">隐私承诺</a>
+    </nav>
+    <div class="footer-col">
+      <h3>反馈</h3>
+      <p>QQ 群：1092312834</p>
+      <p>内测体验、功能建议与问题反馈</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© <span id="year">2026</span> 简单电视投屏（SimpleTVCast）</p>
+    <p>电视需支持 DLNA / AirPlay 协议；文中品牌名称仅作兼容性说明。</p>
+    <a href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
