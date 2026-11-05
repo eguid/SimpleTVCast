@@ -237,6 +237,17 @@ body::after {
   transform: translateX(4px);
 }
 
+/* 正文内联链接 */
+.text-link {
+  color: var(--brand);
+  border-bottom: 1px solid rgba(232, 148, 47, 0.35);
+  transition: border-color 0.2s ease;
+}
+
+.text-link:hover {
+  border-bottom-color: var(--brand);
+}
+
 /* ---------- 4. Header ---------- */
 .site-header {
   position: fixed;
@@ -457,7 +468,8 @@ body::after {
 
 .hero h1,
 .compare h2,
-.download h2 {
+.download h2,
+.features h2 {
   color: var(--paper);
 }
 
@@ -955,12 +967,14 @@ body::after {
 }
 
 .compare .eyebrow,
-.download .eyebrow {
+.download .eyebrow,
+.features .eyebrow {
   color: var(--gold);
 }
 
 .compare .section-sub,
-.download .section-sub {
+.download .section-sub,
+.features .section-sub {
   color: rgba(246, 242, 234, 0.68);
 }
 
@@ -998,7 +1012,23 @@ body::after {
 
 /* ---------- 8. 投屏方式 ---------- */
 .features {
-  background: var(--paper-2);
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+}
+
+.features::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(900px 460px at 50% 0%, rgba(201, 166, 107, 0.12), transparent 70%);
+}
+
+.features > .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .feature-grid {
@@ -1027,24 +1057,24 @@ body::after {
 }
 
 .tab:hover {
-  background: rgba(20, 24, 27, 0.04);
+  background: rgba(246, 242, 234, 0.06);
 }
 
 .tab.is-active {
   border-left-color: var(--gold);
-  background: var(--paper);
+  background: var(--ink-2);
 }
 
 .tab-no {
   font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1.9;
-  color: rgba(20, 24, 27, 0.38);
+  color: rgba(246, 242, 234, 0.35);
   flex: none;
 }
 
 .tab.is-active .tab-no {
-  color: var(--brand);
+  color: var(--gold);
 }
 
 .tab-body {
@@ -1058,18 +1088,18 @@ body::after {
   font-size: 17px;
   font-weight: 600;
   line-height: 1.5;
-  color: var(--ink-soft);
+  color: rgba(246, 242, 234, 0.72);
   transition: color 0.2s ease;
 }
 
 .tab.is-active .tab-label {
-  color: var(--ink);
+  color: var(--paper);
 }
 
 .tab-desc {
   font-size: 13px;
   line-height: 1.6;
-  color: rgba(20, 24, 27, 0.48);
+  color: rgba(246, 242, 234, 0.46);
 }
 
 .feature-stage {
@@ -1093,25 +1123,25 @@ body::after {
 }
 
 .stage-panel .screen {
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-dark);
 }
 
 .stage-panel .screen::before {
-  border-color: var(--line);
+  border-color: var(--line-dark);
 }
 
 .stage-note {
   padding-top: 18px;
   font-size: 15px;
   line-height: 1.8;
-  color: var(--ink-soft);
+  color: rgba(246, 242, 234, 0.65);
 }
 
 /* 无截图模式的占位屏：随内容自适应高度，避免移动端裁切 */
 .screen--mock {
   aspect-ratio: auto;
-  background: linear-gradient(150deg, var(--paper) 0%, var(--paper-2) 100%);
-  border: 1px solid var(--line);
+  background: linear-gradient(150deg, var(--ink-2) 0%, #0b0e10 100%);
+  border: 1px solid var(--line-dark);
 }
 
 .mock-inner {
@@ -1128,10 +1158,10 @@ body::after {
   width: 44px;
   height: 44px;
   margin-bottom: 6px;
-  stroke: var(--ink);
+  stroke: var(--paper);
   stroke-width: 1.5;
   fill: none;
-  opacity: 0.82;
+  opacity: 0.75;
 }
 
 .mock-title {
@@ -1139,13 +1169,14 @@ body::after {
   font-size: 22px;
   font-weight: 600;
   line-height: 1.4;
+  color: var(--paper);
 }
 
 .mock-sub {
   max-width: 34em;
   font-size: 14px;
   line-height: 1.75;
-  color: var(--ink-soft);
+  color: rgba(246, 242, 234, 0.65);
 }
 
 .mock-chips {
@@ -1157,10 +1188,10 @@ body::after {
 
 .mock-chips li {
   padding: 4px 12px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-dark);
   border-radius: var(--radius-tag);
   font-size: 12px;
-  color: var(--ink-soft);
+  color: rgba(246, 242, 234, 0.6);
 }
 
 /* ---------- 9. 能力对比 ---------- */
@@ -1314,6 +1345,85 @@ body::after {
   font-size: 13px;
   letter-spacing: 0.02em;
   color: rgba(246, 242, 234, 0.46);
+}
+
+/* ---------- 使用场景 ---------- */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.scenario-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.scenario-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(232, 148, 47, 0.3);
+}
+
+.scenario-no {
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+}
+
+.scenario-card svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  fill: none;
+  opacity: 0.8;
+}
+
+.scenario-card h3 {
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.scenario-desc {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.scenario-devices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.scenario-devices li {
+  padding: 2px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper-2);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.scenario-note {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink-soft);
 }
 
 /* ---------- 10. 设备支持 ---------- */
@@ -1631,6 +1741,227 @@ body::after {
   gap: 10px;
 }
 
+/* 独立使用教程页 */
+.tut-title {
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+}
+
+.tut-hero-cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-top: 36px;
+}
+
+.tut-section {
+  background: var(--paper);
+}
+
+.tut-section--alt {
+  background: var(--paper-2);
+}
+
+.tut-req-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tut-req {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-light);
+}
+
+.tut-no {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+}
+
+.tut-req h3 {
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.tut-req p:not(.tut-no) {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.tut-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.tut-step {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.tut-step .step-no {
+  color: var(--brand);
+}
+
+.tut-step h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.tut-step p {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.tut-note {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.tut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.tut-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-light);
+}
+
+.tut-card svg {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 14px;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  fill: none;
+  opacity: 0.8;
+}
+
+.tut-card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.tut-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.tut-points {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+
+.tut-points li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.tut-points li::before {
+  content: "·";
+  position: absolute;
+  left: 2px;
+  color: var(--brand);
+}
+
+.tut-faq {
+  max-width: 920px;
+}
+
+.tut-faq-item {
+  border-top: 1px solid var(--line);
+}
+
+.tut-faq-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.tut-faq-item summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tut-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.tut-faq-item summary::after {
+  content: "+";
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--brand);
+}
+
+.tut-faq-item[open] summary::after {
+  content: "−";
+}
+
+.tut-faq-item p {
+  padding: 0 0 22px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.tut-end {
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.tut-end .section-sub {
+  margin-inline: auto;
+}
+
+.tut-end-cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-top: 36px;
+}
+
 /* ---------- 13. 隐私承诺 ---------- */
 .privacy-grid {
   display: grid;
@@ -1784,6 +2115,25 @@ body::after {
 .device-grid .reveal:nth-child(5) { transition-delay: 0.32s; }
 .device-grid .reveal:nth-child(6) { transition-delay: 0.4s; }
 
+.scenario-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.scenario-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.scenario-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+.scenario-grid .reveal:nth-child(5) { transition-delay: 0.32s; }
+.scenario-grid .reveal:nth-child(6) { transition-delay: 0.4s; }
+
+.tut-req-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.tut-req-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.tut-req-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+.tut-steps .reveal:nth-child(2) { transition-delay: 0.12s; }
+.tut-steps .reveal:nth-child(3) { transition-delay: 0.24s; }
+
+.tut-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.tut-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.tut-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+.tut-grid .reveal:nth-child(5) { transition-delay: 0.32s; }
+.tut-grid .reveal:nth-child(6) { transition-delay: 0.4s; }
+
 .privacy-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
 .privacy-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
 .privacy-grid .reveal:nth-child(4) { transition-delay: 0.3s; }
@@ -1804,6 +2154,18 @@ body::after {
   }
 
   .device-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scenario-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tut-req-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tut-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1968,6 +2330,17 @@ body::after {
 
   .device-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scenario-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tut-req-grid,
+  .tut-grid,
+  .tut-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 
   .meters {
