@@ -124,6 +124,38 @@
     });
   }
 
+  /* ---------- 4.1 首屏微信公众号浮层 ---------- */
+  var wxToggle = document.getElementById("wxToggle");
+  var wxCard = document.getElementById("wxCard");
+
+  if (wxToggle && wxCard) {
+    var setWxCard = function (open) {
+      wxToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      wxToggle.classList.toggle("is-active", open);
+      wxCard.hidden = !open;
+    };
+
+    wxToggle.addEventListener("click", function () {
+      setWxCard(wxToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    var wxClose = wxCard.querySelector(".wx-card-close");
+
+    if (wxClose) {
+      wxClose.addEventListener("click", function () {
+        setWxCard(false);
+        wxToggle.focus();
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && wxToggle.getAttribute("aria-expanded") === "true") {
+        setWxCard(false);
+        wxToggle.focus();
+      }
+    });
+  }
+
   /* ---------- 5. 六种投屏方式切换 ---------- */
   var tablist = document.querySelector(".feature-tabs");
 

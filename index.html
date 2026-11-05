@@ -128,6 +128,17 @@ var _hmt = _hmt || [];
           <button class="dock-btn" type="button" data-cast-mode="local" aria-label="本地多媒体投屏" aria-pressed="false" title="本地多媒体投屏">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5a1.8 1.8 0 0 1 1.8-1.8h4.1l1.8 1.9h8.5A1.8 1.8 0 0 1 21 9.4v8.1a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 17.5z"></path></svg>
           </button>
+          <span class="dock-divider" aria-hidden="true"></span>
+          <button class="dock-btn dock-btn--wx" type="button" id="wxToggle" aria-label="关注微信公众号" aria-expanded="false" aria-controls="wxCard" title="关注微信公众号：eguid">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5C12 20.5 3.5 15.2 3.5 9.7A4.6 4.6 0 0 1 12 7.2 4.6 4.6 0 0 1 20.5 9.7C20.5 15.2 12 20.5 12 20.5Z"></path></svg>
+          </button>
+        </div>
+
+        <div class="wx-card" id="wxCard" role="dialog" aria-label="微信公众号" hidden>
+          <button class="wx-card-close" type="button" aria-label="关闭微信公众号卡片">×</button>
+          <img src="wxgzh.jpg" alt="微信公众号 eguid 二维码，微信扫码关注" width="420" height="458" loading="lazy">
+          <h3>微信公众号：eguid</h3>
+          <p>扫码关注，获取投屏软件更新信息、投屏技巧使用与问题反馈</p>
         </div>
       </div>
     </div>
@@ -559,7 +570,7 @@ var _hmt = _hmt || [];
         <li><span class="step-no">3</span><div><h3>选择设备，开始投屏</h3><p>等待自动发现电视，点击设备旁的投屏图标即可开始。</p></div></li>
       </ol>
 
-      <p class="dl-note reveal">备用下载渠道：<a href="/download?id=gitee">Gitee 仓库</a>；内测与问题反馈：<a class="text-link" href="https://qm.qq.com/q/X8ZmaIfY6k" target="_blank" rel="noopener">QQ 群 1092312834</a>。软件免费商用，不限制功能与投屏台数。</p>
+      <p class="dl-note reveal">备用下载渠道：<a href="/download?id=gitee">Gitee 仓库</a>；内测与问题反馈：<a class="text-link" href="https://qm.qq.com/q/X8ZmaIfY6k" target="_blank" rel="noopener">QQ 群 1092312834</a>。微信公众号：eguid。软件免费商用，不限制功能与投屏台数。</p>
     </div>
   </section>
 
@@ -666,6 +677,8 @@ var _hmt = _hmt || [];
     </nav>
     <div class="footer-col">
       <h3>反馈</h3>
+      <p>微信公众号：eguid</p>
+      <img class="footer-qr" src="wxgzh.jpg" alt="微信公众号 eguid 二维码，扫码关注" width="140" height="153" loading="lazy">
       <a href="https://qm.qq.com/q/X8ZmaIfY6k" target="_blank" rel="noopener">QQ 群：1092312834</a>
       <p>内测体验、功能建议与问题反馈</p>
       <p>我们尊重和重视您的每一次建议与每一份反馈！</p>
