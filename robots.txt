@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://simpletvcast.eguid.cc/sitemap.xml
+Sitemap: http://simpletvcast.eguid.cc/sitemap.xml
