@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/logo.png">
 <link rel="icon" href="assets/img/logo.png">
-<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/main.css?v=20261105">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -101,6 +101,7 @@ var _hmt = _hmt || [];
       </div>
 
       <div class="hero-visual reveal">
+        <input type="checkbox" id="wxState" class="wx-state visually-hidden" aria-label="显示或隐藏微信公众号二维码">
         <div class="screen screen--tall" id="heroScreen">
           <img src="assets/img/ui-6.0.3.png" alt="简单电视投屏 6.0.3 主界面：内置服务状态正常，已发现局域网内的 DLNA 无线显示设备" width="415" height="760">
           <span class="screen-glow" aria-hidden="true"></span>
@@ -129,13 +130,12 @@ var _hmt = _hmt || [];
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5a1.8 1.8 0 0 1 1.8-1.8h4.1l1.8 1.9h8.5A1.8 1.8 0 0 1 21 9.4v8.1a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 17.5z"></path></svg>
           </button>
           <span class="dock-divider" aria-hidden="true"></span>
-          <button class="dock-btn dock-btn--wx" type="button" id="wxToggle" aria-label="关注微信公众号" aria-expanded="false" aria-controls="wxCard" title="关注微信公众号：eguid">
+          <label class="dock-btn dock-btn--wx" for="wxState" title="关注微信公众号：eguid">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5C12 20.5 3.5 15.2 3.5 9.7A4.6 4.6 0 0 1 12 7.2 4.6 4.6 0 0 1 20.5 9.7C20.5 15.2 12 20.5 12 20.5Z"></path></svg>
-          </button>
+          </label>
         </div>
 
-        <div class="wx-card" id="wxCard" role="dialog" aria-label="微信公众号" hidden>
-          <button class="wx-card-close" type="button" aria-label="关闭微信公众号卡片">×</button>
+        <div class="wx-card" id="wxCard" role="dialog" aria-label="微信公众号">
           <img src="wxgzh.jpg" alt="微信公众号 eguid 二维码，微信扫码关注" width="420" height="458" loading="lazy">
           <h3>微信公众号：eguid</h3>
           <p>扫码关注，获取投屏软件更新信息、投屏技巧使用与问题反馈</p>
@@ -691,6 +691,6 @@ var _hmt = _hmt || [];
   </div>
 </footer>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=20261105" defer></script>
 </body>
 </html>

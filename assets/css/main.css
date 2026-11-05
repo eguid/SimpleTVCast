@@ -873,6 +873,7 @@ body::after {
 
 .dock-btn--wx {
   color: #e0575c;
+  cursor: pointer;
 }
 
 .dock-btn--wx:hover {
@@ -881,10 +882,16 @@ body::after {
   color: #f07b80;
 }
 
-.dock-btn--wx.is-active {
+.wx-state:checked ~ .hero-dock .dock-btn--wx {
   border-color: var(--gold);
   background: rgba(201, 166, 107, 0.16);
   color: var(--gold);
+  box-shadow: 0 0 24px -8px rgba(201, 166, 107, 0.55);
+}
+
+.wx-state:focus-visible ~ .hero-dock .dock-btn--wx {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
 .dock-btn--wx svg {
@@ -892,8 +899,9 @@ body::after {
   fill-opacity: 0.92;
 }
 
-/* 微信公众号浮层 */
+/* 微信公众号浮层（纯 CSS 开关：勾选后显示，再次点击 ❤ 收起） */
 .wx-card {
+  display: none;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -941,19 +949,8 @@ body::after {
   color: var(--ink-soft);
 }
 
-.wx-card-close {
-  position: absolute;
-  top: 2px;
-  right: 4px;
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
-  line-height: 1;
-  color: var(--ink-soft);
-}
-
-.wx-card-close:hover {
-  color: var(--ink);
+.wx-state:checked ~ .wx-card {
+  display: block;
 }
 
 .scroll-hint {
