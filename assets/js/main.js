@@ -7,6 +7,10 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  function T(key, fallback) {
+    return window.STVi18n ? window.STVi18n.t(key, fallback) : fallback || "";
+  }
+
   /* ---------- 1. 顶部导航滚动态 ---------- */
   var header = document.getElementById("siteHeader");
 
@@ -25,7 +29,7 @@
   function closeNav() {
     if (!navToggle || !mobileNav) return;
     navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "打开导航菜单");
+    navToggle.setAttribute("aria-label", T("common.menuOpen", "打开导航菜单"));
     mobileNav.hidden = true;
     document.body.classList.remove("nav-open");
   }
@@ -38,7 +42,7 @@
         return;
       }
       navToggle.setAttribute("aria-expanded", "true");
-      navToggle.setAttribute("aria-label", "关闭导航菜单");
+      navToggle.setAttribute("aria-label", T("common.menuClose", "关闭导航菜单"));
       mobileNav.hidden = false;
       document.body.classList.add("nav-open");
     });
@@ -56,6 +60,11 @@
 
     window.addEventListener("resize", function () {
       if (window.innerWidth > 1023) closeNav();
+    });
+
+    document.addEventListener("stv:langchange", function () {
+      var open = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-label", T(open ? "common.menuClose" : "common.menuOpen", "打开导航菜单"));
     });
   }
 
@@ -88,15 +97,23 @@
   var castButtons = Array.prototype.slice.call(document.querySelectorAll("[data-cast-mode]"));
 
   if (heroScreen && castButtons.length) {
-    var modeLabels = {
-      mirror: "实时桌面镜像",
-      ppt: "PPT 演示",
-      stream: "网络多媒体",
-      local: "本地多媒体"
+    var modeKeys = {
+      mirror: "hero.castMirror",
+      ppt: "hero.castPpt",
+      stream: "hero.castStream",
+      local: "hero.castLocal"
+    };
+    var currentMode = null;
+
+    var updateStatus = function () {
+      if (!castStatusText) return;
+      var status = T("hero.castStatus", "投屏中");
+      castStatusText.textContent = currentMode ? status + " · " + T(modeKeys[currentMode], "") : status;
     };
 
     var applyMode = function (mode) {
       var casting = mode !== null;
+      currentMode = mode;
       heroScreen.classList.toggle("is-casting", casting);
 
       if (casting) {
@@ -105,9 +122,7 @@
         heroScreen.removeAttribute("data-mode");
       }
 
-      if (castStatusText) {
-        castStatusText.textContent = casting ? "投屏中 · " + modeLabels[mode] : "投屏中";
-      }
+      updateStatus();
 
       castButtons.forEach(function (btn) {
         var active = btn.getAttribute("data-cast-mode") === mode;
@@ -122,6 +137,8 @@
         applyMode(heroScreen.getAttribute("data-mode") === mode ? null : mode);
       });
     });
+
+    document.addEventListener("stv:langchange", updateStatus);
   }
 
   /* ---------- 5. 六种投屏方式切换 ---------- */
@@ -218,6 +235,11 @@
   if (timelineToggle) {
     var extraItems = Array.prototype.slice.call(document.querySelectorAll(".tl-extra"));
 
+    var updateToggleLabel = function () {
+      var expanded = timelineToggle.getAttribute("aria-expanded") === "true";
+      timelineToggle.textContent = T(expanded ? "log.less" : "log.more", expanded ? "收起更早版本" : "展开更早版本");
+    };
+
     timelineToggle.addEventListener("click", function () {
       var expanded = timelineToggle.getAttribute("aria-expanded") === "true";
       var nextState = !expanded;
@@ -227,8 +249,10 @@
       });
 
       timelineToggle.setAttribute("aria-expanded", nextState ? "true" : "false");
-      timelineToggle.textContent = nextState ? "收起更早版本" : "展开更早版本";
+      updateToggleLabel();
     });
+
+    document.addEventListener("stv:langchange", updateToggleLabel);
   }
 
   /* ---------- 8. 版权年份 ---------- */

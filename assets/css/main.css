@@ -322,6 +322,7 @@ body::after {
 .ghost-link {
   position: relative;
   opacity: 0.82;
+  white-space: nowrap;
   transition: opacity 0.2s ease;
 }
 
@@ -372,6 +373,118 @@ body::after {
 
 .site-header.is-scrolled .btn-ghost {
   color: var(--ink);
+}
+
+/* 语言切换 */
+.lang-switch {
+  position: relative;
+  flex: none;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(201, 166, 107, 0.5);
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1;
+  color: inherit;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-btn:hover {
+  border-color: rgba(201, 166, 107, 0.85);
+  background: rgba(246, 242, 234, 0.08);
+}
+
+.site-header.is-scrolled .lang-btn {
+  border-color: var(--line);
+}
+
+.site-header.is-scrolled .lang-btn:hover {
+  border-color: rgba(232, 148, 47, 0.5);
+  background: rgba(20, 24, 27, 0.04);
+}
+
+.lang-icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  opacity: 0.8;
+}
+
+.lang-icon circle,
+.lang-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.lang-caret {
+  width: 9px;
+  height: 6px;
+  flex: none;
+  opacity: 0.65;
+  transition: transform 0.2s ease;
+}
+
+.lang-caret path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.lang-btn[aria-expanded="true"] .lang-caret {
+  transform: rotate(180deg);
+}
+
+.lang-current {
+  white-space: nowrap;
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 60;
+  min-width: 188px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: 0 24px 48px -28px rgba(20, 24, 27, 0.45);
+}
+
+.lang-menu button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--ink);
+  text-align: left;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.lang-menu button:hover {
+  background: rgba(232, 148, 47, 0.1);
+}
+
+.lang-menu button.is-current {
+  color: var(--brand);
+}
+
+.lang-menu button.is-current::after {
+  content: "✓";
+  font-size: 12px;
 }
 
 .nav-toggle {
@@ -2274,6 +2387,19 @@ body::after {
   .tut-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* 导航保留原样，收缩头部间距并隐藏右侧外部链接，给语言切换留出空间 */
+  .header-inner {
+    gap: 24px;
+  }
+
+  .header-actions .ghost-link {
+    display: none;
+  }
+
+  .lang-current {
+    display: none;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -2361,6 +2487,25 @@ body::after {
 
   .site-header .wrap {
     padding-inline: 18px;
+  }
+
+  /* 窄屏收紧头部间距，语言按钮只保留图标，避免与导航按钮拥挤 */
+  .header-inner {
+    gap: 16px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .lang-caret {
+    display: none;
+  }
+
+  .lang-btn {
+    height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
   }
 
   .brand-text em {
