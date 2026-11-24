@@ -1902,6 +1902,46 @@ body::after {
   border-bottom-color: var(--gold);
 }
 
+.dl-alt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  margin-top: 36px;
+  padding: 16px 20px;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius-card);
+  background: rgba(246, 242, 234, 0.03);
+  font-size: 14px;
+  color: rgba(246, 242, 234, 0.62);
+}
+
+.dl-alt-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+}
+
+.dl-alt strong {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+}
+
+.dl-alt a {
+  color: var(--gold);
+  border-bottom: 1px solid rgba(201, 166, 107, 0.4);
+  transition: border-color 0.2s ease;
+}
+
+.dl-alt a:hover {
+  border-bottom-color: var(--gold);
+}
+
 /* 独立下载页 */
 .dl-title {
   font-size: clamp(32px, 4vw, 46px);
@@ -2195,6 +2235,99 @@ body::after {
   color: var(--ink-soft);
 }
 
+/* ---------- 13b. 系列软件 ---------- */
+.series-list {
+  border-top: 1px solid var(--line);
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.25s ease, padding 0.25s var(--ease);
+}
+
+.product:hover {
+  background: rgba(246, 242, 234, 0.55);
+  padding-inline: 16px;
+}
+
+.product-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.product-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+}
+
+.product-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.product-main strong {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.product-main em {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(20, 24, 27, 0.4);
+}
+
+.product-desc {
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.product-status {
+  padding: 6px 14px;
+  border: 1px solid rgba(232, 148, 47, 0.42);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: #a8671c;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.product:hover .product-status {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.product-status.is-current {
+  border-color: var(--line);
+  color: var(--ink-soft);
+}
+
+.product:hover .product-status.is-current {
+  background: transparent;
+  color: var(--ink-soft);
+}
+
 /* ---------- 14. 页脚 ---------- */
 .site-footer {
   background: var(--ink);
@@ -2356,6 +2489,9 @@ body::after {
 .privacy-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
 .privacy-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
 .privacy-grid .reveal:nth-child(4) { transition-delay: 0.3s; }
+
+.series-list .reveal:nth-child(2) { transition-delay: 0.1s; }
+.series-list .reveal:nth-child(3) { transition-delay: 0.2s; }
 
 /* ---------- 16. 响应式 ---------- */
 @media (max-width: 1199px) {
@@ -2701,6 +2837,29 @@ body::after {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
     padding: 28px;
+  }
+
+  .product {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+    padding: 20px 0;
+  }
+
+  .product-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .product-status {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 2px;
+  }
+
+  .product:hover {
+    padding-inline: 0;
+    background: transparent;
   }
 
   .footer-inner {

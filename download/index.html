@@ -9,14 +9,14 @@
 <meta name="robots" content="follow">
 <link rel="canonical" href="https://simpletvcast.eguid.cc/download">
 <link rel="icon" href="../assets/img/logo.png">
-<link rel="stylesheet" href="../assets/css/main.css?v=20261109">
-<script src="../assets/js/i18n/zh-cn.js?v=20251109" defer></script>
-<script src="../assets/js/i18n/zh-hk.js?v=20251109" defer></script>
-<script src="../assets/js/i18n/zh-tw.js?v=20251109" defer></script>
-<script src="../assets/js/i18n/ja.js?v=20251109" defer></script>
-<script src="../assets/js/i18n/en-us.js?v=20251109" defer></script>
-<script src="../assets/js/i18n/en-gb.js?v=20251109" defer></script>
-<script src="../assets/js/i18n.js?v=20251109" defer></script>
+<link rel="stylesheet" href="../assets/css/main.css?v=20261125">
+<script src="../assets/js/i18n/zh-cn.js?v=20261125" defer></script>
+<script src="../assets/js/i18n/zh-hk.js?v=20261125" defer></script>
+<script src="../assets/js/i18n/zh-tw.js?v=20261125" defer></script>
+<script src="../assets/js/i18n/ja.js?v=20261125" defer></script>
+<script src="../assets/js/i18n/en-us.js?v=20261125" defer></script>
+<script src="../assets/js/i18n/en-gb.js?v=20261125" defer></script>
+<script src="../assets/js/i18n.js?v=20261125" defer></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -45,7 +45,6 @@ var _hmt = _hmt || [];
     </a>
     <div class="header-actions">
       <a class="ghost-link" href="../index.html" data-i18n="common.returnHome">返回首页</a>
-      <a class="ghost-link" href="https://github.com/eguid/SimpleTVCast" target="_blank" rel="noopener">GitHub</a>
       <div class="lang-switch" data-lang-switch>
         <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="listbox" aria-controls="langMenu" aria-label="切换语言 / Switch language">
           <svg class="lang-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/><path d="M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9s1.2-6.5 3.6-9z"/></svg>
@@ -76,6 +75,15 @@ var _hmt = _hmt || [];
       </header>
 
       <div class="download-grid" id="dlCards">
+        <article class="dl-card" data-target="huorong">
+          <span class="dl-badge" hidden data-i18n="dlpage.badge">当前选择</span>
+          <p class="dl-cat" data-i18n="dlpage.storeCat">应用商店 · 已上架</p>
+          <h3 data-i18n="dlpage.storeTitle">火绒应用商店</h3>
+          <p class="dl-desc" data-i18n="dlpage.storeDesc">简单电视投屏已上架火绒应用商店。搜索软件名称即可下载安装，后续更新由商店统一完成。</p>
+          <div class="dl-actions">
+            <a class="btn btn-gold" data-dl="huorong" href="https://www.huorong.cn/appstore" target="_blank" rel="noopener" data-i18n="dlpage.storeBtn">前往火绒应用商店</a>
+          </div>
+        </article>
         <article class="dl-card" data-target="gitee">
           <span class="dl-badge" hidden data-i18n="dlpage.badge">当前选择</span>
           <p class="dl-cat" data-i18n="dlpage.giteeCat">国内分流 · 推荐</p>
@@ -83,7 +91,7 @@ var _hmt = _hmt || [];
           <p class="dl-desc" data-i18n="dlpage.giteeDesc">国内访问速度快，绿色版与安装包均在 Gitee Releases 附件中，国内网络无需额外配置。</p>
           <div class="dl-actions">
             <a class="btn btn-gold" data-dl="gitee-zip" href="https://gitee.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.zip">下载绿色版（zip）</a>
-            <a class="btn btn-outline" data-dl="gitee-msi" href="https://gitee.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.msi">下载安装包（msi）</a>
+            <a class="btn btn-outline" data-dl="gitee-exe" href="https://gitee.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.exe">下载安装包（exe）</a>
           </div>
         </article>
         <article class="dl-card" data-target="github">
@@ -93,7 +101,7 @@ var _hmt = _hmt || [];
           <p class="dl-desc" data-i18n="dlpage.githubDesc">GitHub Releases 为原始发布位置，附件包含绿色版与安装包，海外网络访问更稳定。</p>
           <div class="dl-actions">
             <a class="btn btn-gold" data-dl="github-zip" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.zip">下载绿色版（zip）</a>
-            <a class="btn btn-outline" data-dl="github-msi" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.msi">下载安装包（msi）</a>
+            <a class="btn btn-outline" data-dl="github-exe" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.exe">下载安装包（exe）</a>
           </div>
         </article>
         <article class="dl-card" data-target="baidu">
@@ -117,8 +125,8 @@ var _hmt = _hmt || [];
       </div>
 
       <ol class="steps reveal">
-        <li><span class="step-no">1</span><div><h3 data-i18n="steps.t1">下载</h3><p data-i18n="steps.d1">在 Release 附件中下载 zip 或 msi。</p></div></li>
-        <li><span class="step-no">2</span><div><h3 data-i18n="steps.t2">解压或安装</h3><p data-i18n="steps.d2">zip 解压即用；msi 双击安装。两者均无需 Java 环境。</p></div></li>
+        <li><span class="step-no">1</span><div><h3 data-i18n="steps.t1">下载</h3><p data-i18n="steps.d1">在 Release 附件中下载 exe 或 zip，或从火绒应用商店获取。</p></div></li>
+        <li><span class="step-no">2</span><div><h3 data-i18n="steps.t2">解压或安装</h3><p data-i18n="steps.d2">exe 双击安装；zip 解压即用。两者均无需 Java 环境。</p></div></li>
         <li><span class="step-no">3</span><div><h3 data-i18n="steps.t3">选择设备，开始投屏</h3><p data-i18n="steps.d3">等待自动发现电视，点击设备旁的投屏图标即可开始。</p></div></li>
       </ol>
 
@@ -154,9 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var ids = {
     zip: { label: "dlpage.id.zip", target: "gitee" },
-    msi: { label: "dlpage.id.msi", target: "gitee" },
+    exe: { label: "dlpage.id.exe", target: "gitee" },
     gitee: { label: "dlpage.id.gitee", target: "gitee" },
     github: { label: "dlpage.id.github", target: "github" },
+    huorong: { label: "dlpage.id.huorong", target: "huorong" },
     baidu: { label: "dlpage.id.baidu", target: "baidu" },
     csdn: { label: "dlpage.id.csdn", target: "csdn" }
   };

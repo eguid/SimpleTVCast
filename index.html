@@ -14,14 +14,14 @@
 <meta name="baidu-site-verification" content="codeva-HYyZygx9hN" />
 <meta name="msvalidate.01" content="A76D1EB48F258E577BE4AD0ADFD0FCEB" />
 <link rel="icon" href="assets/img/logo.png">
-<link rel="stylesheet" href="assets/css/main.css?v=20251109">
-<script src="assets/js/i18n/zh-cn.js?v=20251109" defer></script>
-<script src="assets/js/i18n/zh-hk.js?v=20251109" defer></script>
-<script src="assets/js/i18n/zh-tw.js?v=20251109" defer></script>
-<script src="assets/js/i18n/ja.js?v=20251109" defer></script>
-<script src="assets/js/i18n/en-us.js?v=20251109" defer></script>
-<script src="assets/js/i18n/en-gb.js?v=20251109" defer></script>
-<script src="assets/js/i18n.js?v=20251109" defer></script>
+<link rel="stylesheet" href="assets/css/main.css?v=20261125">
+<script src="assets/js/i18n/zh-cn.js?v=20261125" defer></script>
+<script src="assets/js/i18n/zh-hk.js?v=20261125" defer></script>
+<script src="assets/js/i18n/zh-tw.js?v=20261125" defer></script>
+<script src="assets/js/i18n/ja.js?v=20261125" defer></script>
+<script src="assets/js/i18n/en-us.js?v=20261125" defer></script>
+<script src="assets/js/i18n/en-gb.js?v=20261125" defer></script>
+<script src="assets/js/i18n.js?v=20261125" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,10 +67,9 @@ var _hmt = _hmt || [];
       <a href="#devices" data-i18n="nav.devices">设备支持</a>
       <a href="#privacy" data-i18n="nav.privacy">隐私安全</a>
       <a href="#changelog" data-i18n="nav.changelog">更新日志</a>
+      <a href="#series" data-i18n="nav.series">系列软件</a>
     </nav>
     <div class="header-actions">
-      <a class="ghost-link" href="https://github.com/eguid/SimpleTVCast" target="_blank" rel="noopener">GitHub</a>
-      <a class="ghost-link" href="https://gitee.com/eguid/SimpleTVCast" target="_blank" rel="noopener">Gitee</a>
       <a class="btn btn-ghost" href="#download" data-i18n="common.download">下载</a>
       <div class="lang-switch" data-lang-switch>
         <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="listbox" aria-controls="langMenu" aria-label="切换语言 / Switch language">
@@ -104,7 +103,7 @@ var _hmt = _hmt || [];
     <a href="#privacy" data-i18n="nav.privacy">隐私安全</a>
     <a href="#download" data-i18n="common.downloadAndInstall">下载与安装</a>
     <a href="#changelog" data-i18n="nav.changelog">更新日志</a>
-    <a href="https://github.com/eguid/SimpleTVCast" target="_blank" rel="noopener">GitHub</a>
+    <a href="#series" data-i18n="nav.series">系列软件</a>
   </nav>
 </div>
 
@@ -578,7 +577,7 @@ var _hmt = _hmt || [];
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dl.eyebrow">07 / 下载与安装</p>
         <h2 data-i18n="dl.title">下载，安装，点一下</h2>
-        <p class="section-sub"><span data-i18n="dl.sub">两个安装包，按需选择。</span>
+        <p class="section-sub"><span data-i18n="dl.sub">选择 EXE 安装包、火绒应用商店或绿色版。</span>
           <p data-i18n="dl.sub2">支持windows vista以上包括（windows7、windows8、windows10、windows11）</p>
         </p>
       </header>
@@ -586,22 +585,28 @@ var _hmt = _hmt || [];
       <div class="download-grid">
         <article class="dl-card reveal">
           <span class="dl-badge" data-i18n="dl.badge">推荐</span>
-          <h3>SimpleTVCast.zip</h3>
-          <p class="dl-desc" data-i18n="dl.card1desc">绿色免安装版，内置运行环境。解压后直接双击目录内的 SimpleTVCast.exe 即可运行。</p>
-          <a class="btn btn-gold" href="/download?id=zip" data-i18n="dl.card1btn">下载绿色版</a>
+          <h3>SimpleTVCast.exe</h3>
+          <p class="dl-desc" data-i18n="dl.card2desc">Windows EXE 安装包，双击运行安装向导，自动创建桌面快捷方式并注册卸载入口。</p>
+          <a class="btn btn-gold" href="/download?id=exe" data-i18n="dl.card2btn">下载安装包</a>
         </article>
         <article class="dl-card reveal">
-          <h3>SimpleTVCast.msi</h3>
-          <p class="dl-desc" data-i18n="dl.card2desc">Windows 安装包，双击运行安装向导，自动创建桌面快捷方式并注册卸载入口。</p>
-          <a class="btn btn-outline" href="/download?id=msi" data-i18n="dl.card2btn">下载安装包</a>
+          <span class="dl-badge" data-i18n="dl.storeBadge">已上架</span>
+          <h3 data-i18n="dl.storeTitle">火绒应用商店</h3>
+          <p class="dl-desc" data-i18n="dl.storeDesc">简单电视投屏已上架火绒应用商店。打开火绒应用商店，搜索「简单电视投屏」即可下载安装，后续更新由商店统一完成。</p>
+          <a class="btn btn-outline" href="https://www.huorong.cn/appstore" target="_blank" rel="noopener" data-i18n="dl.storeBtn">前往火绒应用商店</a>
         </article>
       </div>
 
       <ol class="steps reveal">
-        <li><span class="step-no">1</span><div><h3 data-i18n="steps.t1">下载</h3><p data-i18n="steps.d1">在 Release 附件中下载 zip 或 msi。</p></div></li>
-        <li><span class="step-no">2</span><div><h3 data-i18n="steps.t2">解压或安装</h3><p data-i18n="steps.d2">zip 解压即用；msi 双击安装。两者均无需 Java 环境。</p></div></li>
+        <li><span class="step-no">1</span><div><h3 data-i18n="steps.t1">下载</h3><p data-i18n="steps.d1">在 Release 附件中下载 exe 或 zip，或从火绒应用商店获取。</p></div></li>
+        <li><span class="step-no">2</span><div><h3 data-i18n="steps.t2">解压或安装</h3><p data-i18n="steps.d2">exe 双击安装；zip 解压即用。两者均无需 Java 环境。</p></div></li>
         <li><span class="step-no">3</span><div><h3 data-i18n="steps.t3">选择设备，开始投屏</h3><p data-i18n="steps.d3">等待自动发现电视，点击设备旁的投屏图标即可开始。</p></div></li>
       </ol>
+
+      <p class="dl-alt reveal">
+        <span class="dl-alt-text"><strong data-i18n="dl.greenTitle">绿色免安装版</strong><span data-i18n="dl.greenDesc">解压即用，内置运行环境。</span></span>
+        <a href="/download?id=zip" data-i18n="dl.greenBtn">下载 SimpleTVCast.zip</a>
+      </p>
 
       <p class="dl-note reveal" data-i18n-html="dl.note">备用下载渠道：<a href="/download?id=gitee">Gitee 仓库</a>；内测与问题反馈：<a class="text-link" href="https://qm.qq.com/q/X8ZmaIfY6k" target="_blank" rel="noopener">QQ 群 1092312834</a>。微信公众号：eguid。软件免费商用，不限制功能与投屏台数。</p>
     </div>
@@ -679,6 +684,55 @@ var _hmt = _hmt || [];
       <div class="timeline-actions reveal">
         <button class="btn btn-ghost" type="button" id="timelineToggle" aria-expanded="false" aria-controls="extraVersions" data-i18n="log.more">展开更早版本</button>
         <a class="btn btn-text" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n-html="log.full">查看完整更新日志 <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 系列软件 -->
+  <section class="section series" id="series">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="series.eyebrow">09 / 系列软件</p>
+        <h2 data-i18n="series.title">同一个作者，同样简单的工具</h2>
+        <p class="section-sub" data-i18n="series.sub">除了简单电视投屏，还有这些日常会用到的小工具。访问对应官网了解更多。</p>
+      </header>
+
+      <div class="series-list">
+        <a class="product reveal" href="https://eguid.github.io/simplecompress" target="_blank" rel="noopener">
+          <span class="product-icon" aria-hidden="true">
+            <img src="assets/img/simplecompress-icon-128.png" alt="">
+          </span>
+          <span class="product-main">
+            <strong>简单压缩</strong>
+            <em>SimpleCompress</em>
+            <span class="product-desc" data-i18n="series.cd">Windows 文件管理与压缩工具</span>
+          </span>
+          <span class="product-status" data-i18n="series.visit">访问官网 →</span>
+        </a>
+
+        <a class="product reveal" href="https://eguid.github.io/simplekantu" target="_blank" rel="noopener">
+          <span class="product-icon" aria-hidden="true">
+            <img src="assets/img/simplekantu-icon-128.png" alt="">
+          </span>
+          <span class="product-main">
+            <strong>简单看图</strong>
+            <em>SimpleKantu</em>
+            <span class="product-desc" data-i18n="series.kd">轻量、快速的 Windows 图片与文档查看器</span>
+          </span>
+          <span class="product-status" data-i18n="series.visit">访问官网 →</span>
+        </a>
+
+        <a class="product reveal" href="#top" aria-current="page">
+          <span class="product-icon" aria-hidden="true">
+            <img src="assets/img/simpletvcast-icon-128.png" alt="">
+          </span>
+          <span class="product-main">
+            <strong>简单电视投屏</strong>
+            <em>SimpleTVCast</em>
+            <span class="product-desc" data-i18n="series.td">免费、无广告、无水印的 Windows 电视投屏工具</span>
+          </span>
+          <span class="product-status is-current" data-i18n="series.current">当前页面</span>
+        </a>
       </div>
     </div>
   </section>
