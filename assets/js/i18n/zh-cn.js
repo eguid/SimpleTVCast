@@ -431,7 +431,7 @@ window.STV_I18N["zh-CN"] = {
   "dl.storeBtn": "前往火绒应用商店",
   "dl.greenTitle": "绿色免安装版",
   "dl.greenTag": "绿色免安装版 · 获取方式",
-  "dl.greenTip": "绿色版不提供直接下载。请关注微信公众号「eguid」并发送关键词获取，或加入官方 QQ 群，在群文件中下载。",
+  "dl.greenTip": "绿色版请关注微信公众号「eguid」或加入官方 QQ 群，在群文件中下载。",
   "dl.greenWechat": "微信公众号",
   "dl.greenQq": "官方 QQ 群",
   "dl.greenJoin": "加入 QQ 群",
