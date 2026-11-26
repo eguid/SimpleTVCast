@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="dlpage.metaTitle">下载中心 · 简单电视投屏（SimpleTVCast）</title>
-<meta name="description" content="简单电视投屏（SimpleTVCast）下载中心：绿色免安装版、Windows 安装包，以及 GitHub、Gitee、CSDN、百度网盘等备用下载渠道。" data-i18n="dlpage.metaDesc" data-i18n-attr="content">
+<meta name="description" content="简单电视投屏（SimpleTVCast）下载中心：EXE 安装包、火绒 / 联想应用商店，以及 GitHub、Gitee、CSDN、百度网盘等备用下载渠道。" data-i18n="dlpage.metaDesc" data-i18n-attr="content">
 <meta name="applicable-device" content="pc,mobile">
 <meta name="robots" content="follow">
 <link rel="canonical" href="https://simpletvcast.eguid.cc/download">
 <link rel="icon" href="../assets/img/logo.png">
-<link rel="stylesheet" href="../assets/css/main.css?v=20261125">
-<script src="../assets/js/i18n/zh-cn.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/zh-hk.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/zh-tw.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/ja.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/en-us.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/en-gb.js?v=20261125" defer></script>
-<script src="../assets/js/i18n.js?v=20261125" defer></script>
+<link rel="stylesheet" href="../assets/css/main.css?v=20261129">
+<script src="../assets/js/i18n/zh-cn.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/zh-hk.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/zh-tw.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/ja.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/en-us.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/en-gb.js?v=20261129" defer></script>
+<script src="../assets/js/i18n.js?v=20261129" defer></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -70,7 +70,7 @@ var _hmt = _hmt || [];
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dlpage.eyebrow">DOWNLOAD / 下载中心</p>
         <h1 class="dl-title" data-i18n="dlpage.title">选择你的下载方式</h1>
-        <p class="section-sub" id="dlIntro" data-i18n="dlpage.intro">国内用户推荐 Gitee 分流，海外用户推荐 GitHub 分流；网盘与 CSDN 作为备用下载渠道。</p>
+        <p class="section-sub" id="dlIntro" data-i18n="dlpage.intro">国内用户可从火绒应用商店、联想应用商店或 Gitee 下载，海外用户推荐 GitHub 分流；网盘与 CSDN 作为备用渠道。绿色版仅通过公众号或 QQ 群提供。</p>
         <p class="dl-picked" id="dlPicked" hidden></p>
       </header>
 
@@ -84,31 +84,38 @@ var _hmt = _hmt || [];
             <a class="btn btn-gold" data-dl="huorong" href="https://www.huorong.cn/appstore" target="_blank" rel="noopener" data-i18n="dlpage.storeBtn">前往火绒应用商店</a>
           </div>
         </article>
+        <article class="dl-card" data-target="lenovo">
+          <span class="dl-badge" hidden data-i18n="dlpage.badge">当前选择</span>
+          <p class="dl-cat" data-i18n="dlpage.lenovoCat">应用商店 · 已上架</p>
+          <h3 data-i18n="dlpage.lenovoTitle">联想应用商店</h3>
+          <p class="dl-desc" data-i18n="dlpage.lenovoDesc">简单电视投屏已上架联想应用商店。搜索软件名称即可下载安装，后续更新由商店统一完成。</p>
+          <div class="dl-actions">
+            <a class="btn btn-gold" data-dl="lenovo" href="https://lestore.lenovo.com/" target="_blank" rel="noopener" data-i18n="dlpage.lenovoBtn">前往联想应用商店</a>
+          </div>
+        </article>
         <article class="dl-card" data-target="gitee">
           <span class="dl-badge" hidden data-i18n="dlpage.badge">当前选择</span>
           <p class="dl-cat" data-i18n="dlpage.giteeCat">国内分流 · 推荐</p>
           <h3 data-i18n="dlpage.giteeTitle">Gitee 下载</h3>
-          <p class="dl-desc" data-i18n="dlpage.giteeDesc">国内访问速度快，绿色版与安装包均在 Gitee Releases 附件中，国内网络无需额外配置。</p>
+          <p class="dl-desc" data-i18n="dlpage.giteeDesc">国内访问速度快，EXE 安装包在 Gitee Releases 附件中，国内网络无需额外配置。</p>
           <div class="dl-actions">
-            <a class="btn btn-gold" data-dl="gitee-zip" href="https://gitee.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.zip">下载绿色版（zip）</a>
-            <a class="btn btn-outline" data-dl="gitee-exe" href="https://gitee.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.exe">下载安装包（exe）</a>
+            <a class="btn btn-gold" data-dl="gitee-exe" href="https://gitee.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.exe">下载安装包（exe）</a>
           </div>
         </article>
         <article class="dl-card" data-target="github">
           <span class="dl-badge" hidden data-i18n="dlpage.badge">当前选择</span>
           <p class="dl-cat" data-i18n="dlpage.githubCat">海外分流</p>
           <h3 data-i18n="dlpage.githubTitle">GitHub 下载</h3>
-          <p class="dl-desc" data-i18n="dlpage.githubDesc">GitHub Releases 为原始发布位置，附件包含绿色版与安装包，海外网络访问更稳定。</p>
+          <p class="dl-desc" data-i18n="dlpage.githubDesc">GitHub Releases 为原始发布位置，附件提供 EXE 安装包，海外网络访问更稳定。</p>
           <div class="dl-actions">
-            <a class="btn btn-gold" data-dl="github-zip" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.zip">下载绿色版（zip）</a>
-            <a class="btn btn-outline" data-dl="github-exe" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.exe">下载安装包（exe）</a>
+            <a class="btn btn-gold" data-dl="github-exe" href="https://github.com/eguid/SimpleTVCast/releases" target="_blank" rel="noopener" data-i18n="dlpage.exe">下载安装包（exe）</a>
           </div>
         </article>
         <article class="dl-card" data-target="baidu">
           <span class="dl-badge" hidden data-i18n="dlpage.badge">当前选择</span>
           <p class="dl-cat" data-i18n="dlpage.baiduCat">网盘下载</p>
           <h3 data-i18n="dlpage.baiduTitle">百度网盘</h3>
-          <p class="dl-desc" data-i18n="dlpage.baiduDesc">适合无法访问代码托管平台的用户，网盘内同样提供绿色版与安装包。</p>
+          <p class="dl-desc" data-i18n="dlpage.baiduDesc">适合无法访问代码托管平台的用户，网盘内提供 EXE 安装包。</p>
           <div class="dl-actions">
             <a class="btn btn-gold" data-dl="baidu" href="https://pan.baidu.com/s/5yfEkEwj1QvCoi28gH5p5Jg" target="_blank" rel="noopener" data-i18n="dlpage.baiduBtn">前往百度网盘</a>
           </div>
@@ -124,9 +131,22 @@ var _hmt = _hmt || [];
         </article>
       </div>
 
+      <article class="dl-green reveal">
+        <div class="dl-green-main">
+          <p class="dl-tag" data-i18n="dl.greenTag">绿色免安装版 · 获取方式</p>
+          <h3 data-i18n="dl.greenTitle">绿色免安装版</h3>
+          <p data-i18n="dl.greenTip">绿色版请关注微信公众号「eguid」或加入官方 QQ 群，在群文件中下载。</p>
+        </div>
+        <div class="dl-green-ways">
+          <p><span data-i18n="dl.greenWechat">微信公众号</span><b>eguid</b></p>
+          <p><span data-i18n="dl.greenQq">官方 QQ 群</span><b>1092312834</b></p>
+          <a class="btn btn-outline" href="https://qm.qq.com/q/X8ZmaIfY6k" target="_blank" rel="noopener" data-i18n="dl.greenJoin">加入 QQ 群</a>
+        </div>
+      </article>
+
       <ol class="steps reveal">
-        <li><span class="step-no">1</span><div><h3 data-i18n="steps.t1">下载</h3><p data-i18n="steps.d1">在 Release 附件中下载 exe 或 zip，或从火绒应用商店获取。</p></div></li>
-        <li><span class="step-no">2</span><div><h3 data-i18n="steps.t2">解压或安装</h3><p data-i18n="steps.d2">exe 双击安装；zip 解压即用。两者均无需 Java 环境。</p></div></li>
+        <li><span class="step-no">1</span><div><h3 data-i18n="steps.t1">下载</h3><p data-i18n="steps.d1">在 Release 附件中下载 exe，或从应用商店获取。</p></div></li>
+        <li><span class="step-no">2</span><div><h3 data-i18n="steps.t2">安装</h3><p data-i18n="steps.d2">exe 双击安装，按提示完成即可，无需 Java 环境。</p></div></li>
         <li><span class="step-no">3</span><div><h3 data-i18n="steps.t3">选择设备，开始投屏</h3><p data-i18n="steps.d3">等待自动发现电视，点击设备旁的投屏图标即可开始。</p></div></li>
       </ol>
 
@@ -165,7 +185,10 @@ document.addEventListener("DOMContentLoaded", function () {
     exe: { label: "dlpage.id.exe", target: "gitee" },
     gitee: { label: "dlpage.id.gitee", target: "gitee" },
     github: { label: "dlpage.id.github", target: "github" },
+    hy: { label: "dlpage.id.huorong", target: "huorong" },
     huorong: { label: "dlpage.id.huorong", target: "huorong" },
+    lenove: { label: "dlpage.id.lenove", target: "lenovo" },
+    lenovo: { label: "dlpage.id.lenove", target: "lenovo" },
     baidu: { label: "dlpage.id.baidu", target: "baidu" },
     csdn: { label: "dlpage.id.csdn", target: "csdn" }
   };

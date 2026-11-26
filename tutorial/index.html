@@ -9,14 +9,14 @@
 <meta name="robots" content="follow">
 <link rel="canonical" href="https://simpletvcast.eguid.cc/tutorial">
 <link rel="icon" href="../assets/img/logo.png">
-<link rel="stylesheet" href="../assets/css/main.css?v=20261125">
-<script src="../assets/js/i18n/zh-cn.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/zh-hk.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/zh-tw.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/ja.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/en-us.js?v=20261125" defer></script>
-<script src="../assets/js/i18n/en-gb.js?v=20261125" defer></script>
-<script src="../assets/js/i18n.js?v=20261125" defer></script>
+<link rel="stylesheet" href="../assets/css/main.css?v=20261129">
+<script src="../assets/js/i18n/zh-cn.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/zh-hk.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/zh-tw.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/ja.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/en-us.js?v=20261129" defer></script>
+<script src="../assets/js/i18n/en-gb.js?v=20261129" defer></script>
+<script src="../assets/js/i18n.js?v=20261129" defer></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -229,6 +229,18 @@ var _hmt = _hmt || [];
         <h2 data-i18n="faq.title">投屏遇到问题？</h2>
         <p class="section-sub" data-i18n-html="faq.sub">先看这里，大部分问题都能自助解决；仍无法解决可加 <a class="text-link" href="https://qm.qq.com/q/X8ZmaIfY6k" target="_blank" rel="noopener">QQ 群 1092312834</a> 反馈。</p>
       </header>
+
+      <div class="tut-help reveal">
+        <h3 data-i18n="tut.helpTitle">发现不到电视怎么办？</h3>
+        <p class="tut-help-sub" data-i18n="tut.helpSub">按以下顺序排查：</p>
+        <ol class="tut-help-list">
+          <li data-i18n="tut.help1">网络隔离：部分路由器开启「AP 隔离 / 客户端隔离」，会导致设备之间无法互相发现；请关闭该功能，或改用同一网段的 Wi-Fi。</li>
+          <li data-i18n="tut.help2">多网卡：如果电脑同时有 Wi-Fi、有线、VPN、虚拟机网卡，请到「全局配置 → 网络」手动选择与电视同一局域网的网卡。</li>
+          <li data-i18n="tut.help3">防火墙：首次运行需要放行 SimpleTVCast 的入站连接（UDP 1900 与媒体端口）。</li>
+          <li data-i18n="tut.help4">电视侧：部分电视需要在设置中开启「多屏互动 / DLNA / 投屏」开关；播放器需处于主界面。</li>
+          <li data-i18n="tut.help5">手动刷新：点击设备列表空态中的「刷新设备」重新发起搜索。</li>
+        </ol>
+      </div>
 
       <div class="tut-faq reveal">
         <details class="tut-faq-item">

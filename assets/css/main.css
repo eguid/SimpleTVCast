@@ -676,7 +676,7 @@ body::after {
 }
 
 .screen--tall {
-  aspect-ratio: 415 / 760;
+  aspect-ratio: 516 / 942;
   box-shadow: var(--shadow-dark), 0 0 120px -24px rgba(201, 166, 107, 0.22);
 }
 
@@ -1803,6 +1803,16 @@ body::after {
   gap: 24px;
 }
 
+.download-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1023px) {
+  .download-grid--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .dl-card {
   position: relative;
   padding: 32px;
@@ -1902,44 +1912,62 @@ body::after {
   border-bottom-color: var(--gold);
 }
 
-.dl-alt {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px 24px;
-  margin-top: 36px;
-  padding: 16px 20px;
+.dl-green {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+  gap: 32px;
+  margin-top: 28px;
+  padding: 32px;
   border: 1px solid var(--line-dark);
   border-radius: var(--radius-card);
   background: rgba(246, 242, 234, 0.03);
-  font-size: 14px;
-  color: rgba(246, 242, 234, 0.62);
 }
 
-.dl-alt-text {
+.dl-green-main .dl-tag {
+  margin-bottom: 10px;
+}
+
+.dl-green h3 {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--paper);
+}
+
+.dl-green-main p:not(.dl-tag) {
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: rgba(246, 242, 234, 0.66);
+}
+
+.dl-green-ways {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 32px;
+  border-left: 1px solid var(--line-dark);
+}
+
+.dl-green-ways p {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 6px 12px;
-}
-
-.dl-alt strong {
-  font-family: var(--font-mono);
   font-size: 14px;
+  color: rgba(246, 242, 234, 0.62);
+}
+
+.dl-green-ways b {
+  font-family: var(--font-mono);
   font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--paper);
-}
-
-.dl-alt a {
   color: var(--gold);
-  border-bottom: 1px solid rgba(201, 166, 107, 0.4);
-  transition: border-color 0.2s ease;
 }
 
-.dl-alt a:hover {
-  border-bottom-color: var(--gold);
+.dl-green-ways .btn {
+  margin-top: 6px;
 }
 
 /* 独立下载页 */
@@ -2133,6 +2161,61 @@ body::after {
   position: absolute;
   left: 2px;
   color: var(--brand);
+}
+
+.tut-help {
+  max-width: 920px;
+  margin-bottom: 36px;
+  padding: 28px 32px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brand);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-light);
+}
+
+.tut-help h3 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.tut-help-sub {
+  margin-top: 8px;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+
+.tut-help-list {
+  counter-reset: tut-help;
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.tut-help-list li {
+  position: relative;
+  padding-left: 32px;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+  counter-increment: tut-help;
+}
+
+.tut-help-list li::before {
+  content: counter(tut-help);
+  position: absolute;
+  left: 0;
+  top: 3px;
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: rgba(232, 148, 47, 0.14);
+  color: #a8671c;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1;
 }
 
 .tut-faq {
@@ -2837,6 +2920,23 @@ body::after {
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
     padding: 28px;
+  }
+
+  .tut-help {
+    padding: 22px 20px;
+  }
+
+  .dl-green {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding: 24px;
+  }
+
+  .dl-green-ways {
+    padding-top: 20px;
+    padding-left: 0;
+    border-top: 1px solid var(--line-dark);
+    border-left: 0;
   }
 
   .product {

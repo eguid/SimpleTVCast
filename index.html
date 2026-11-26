@@ -14,14 +14,14 @@
 <meta name="baidu-site-verification" content="codeva-HYyZygx9hN" />
 <meta name="msvalidate.01" content="A76D1EB48F258E577BE4AD0ADFD0FCEB" />
 <link rel="icon" href="assets/img/logo.png">
-<link rel="stylesheet" href="assets/css/main.css?v=20261125">
-<script src="assets/js/i18n/zh-cn.js?v=20261125" defer></script>
-<script src="assets/js/i18n/zh-hk.js?v=20261125" defer></script>
-<script src="assets/js/i18n/zh-tw.js?v=20261125" defer></script>
-<script src="assets/js/i18n/ja.js?v=20261125" defer></script>
-<script src="assets/js/i18n/en-us.js?v=20261125" defer></script>
-<script src="assets/js/i18n/en-gb.js?v=20261125" defer></script>
-<script src="assets/js/i18n.js?v=20261125" defer></script>
+<link rel="stylesheet" href="assets/css/main.css?v=20261129">
+<script src="assets/js/i18n/zh-cn.js?v=20261129" defer></script>
+<script src="assets/js/i18n/zh-hk.js?v=20261129" defer></script>
+<script src="assets/js/i18n/zh-tw.js?v=20261129" defer></script>
+<script src="assets/js/i18n/ja.js?v=20261129" defer></script>
+<script src="assets/js/i18n/en-us.js?v=20261129" defer></script>
+<script src="assets/js/i18n/en-gb.js?v=20261129" defer></script>
+<script src="assets/js/i18n.js?v=20261129" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -135,7 +135,7 @@ var _hmt = _hmt || [];
       <div class="hero-visual reveal">
         <input type="checkbox" id="wxState" class="wx-state visually-hidden" aria-label="显示或隐藏微信公众号二维码" data-i18n="wx.stateAria" data-i18n-attr="aria-label">
         <div class="screen screen--tall" id="heroScreen">
-          <img src="assets/img/ui-6.0.3.png" alt="简单电视投屏 6.0.3 主界面：内置服务状态正常，已发现局域网内的 DLNA 无线显示设备" width="415" height="760" data-i18n="hero.imgAlt" data-i18n-attr="alt">
+          <img src="assets/img/ui-6.0.5.png" alt="简单电视投屏 6.0.5 主界面：内置服务状态正常，已发现局域网内的 DLNA 无线显示设备" width="516" height="942" data-i18n="hero.imgAlt" data-i18n-attr="alt">
           <span class="screen-glow" aria-hidden="true"></span>
           <span class="cast-fx" aria-hidden="true">
             <span class="fx fx-scan"></span>
@@ -577,12 +577,12 @@ var _hmt = _hmt || [];
       <header class="section-head reveal">
         <p class="eyebrow" data-i18n="dl.eyebrow">07 / 下载与安装</p>
         <h2 data-i18n="dl.title">下载，安装，点一下</h2>
-        <p class="section-sub"><span data-i18n="dl.sub">选择 EXE 安装包、火绒应用商店或绿色版。</span>
+        <p class="section-sub"><span data-i18n="dl.sub">选择 EXE 安装包或应用商店；绿色版请在公众号或 QQ 群获取。</span>
           <p data-i18n="dl.sub2">支持windows vista以上包括（windows7、windows8、windows10、windows11）</p>
         </p>
       </header>
 
-      <div class="download-grid">
+      <div class="download-grid download-grid--three">
         <article class="dl-card reveal">
           <span class="dl-badge" data-i18n="dl.badge">推荐</span>
           <h3>简单电视投屏.exe</h3>
@@ -593,20 +593,34 @@ var _hmt = _hmt || [];
           <span class="dl-badge" data-i18n="dl.storeBadge">已上架</span>
           <h3 data-i18n="dl.storeTitle">火绒应用商店</h3>
           <p class="dl-desc" data-i18n="dl.storeDesc">简单电视投屏已上架火绒应用商店。打开火绒应用商店，搜索「简单电视投屏」即可下载安装，后续更新由商店统一完成。</p>
-          <a class="btn btn-outline" href="https://www.huorong.cn/appstore" target="_blank" rel="noopener" data-i18n="dl.storeBtn">前往火绒应用商店</a>
+          <a class="btn btn-outline" href="/download?id=hy" data-i18n="dl.storeBtn">前往火绒应用商店</a>
+        </article>
+        <article class="dl-card reveal">
+          <span class="dl-badge" data-i18n="dl.storeBadge">已上架</span>
+          <h3 data-i18n="dl.lenovoTitle">联想应用商店</h3>
+          <p class="dl-desc" data-i18n="dl.lenovoDesc">简单电视投屏已上架联想应用商店。打开联想应用商店，搜索「简单电视投屏」即可下载安装，后续更新由商店统一完成。</p>
+          <a class="btn btn-outline" href="/download?id=lenove" data-i18n="dl.lenovoBtn">前往联想应用商店</a>
         </article>
       </div>
 
       <ol class="steps reveal">
-        <li><span class="step-no">1</span><div><h3 data-i18n="steps.t1">下载</h3><p data-i18n="steps.d1">在 Release 附件中下载 exe 或 zip，或从火绒应用商店获取。</p></div></li>
-        <li><span class="step-no">2</span><div><h3 data-i18n="steps.t2">解压或安装</h3><p data-i18n="steps.d2">exe 双击安装；zip 解压即用。两者均无需 Java 环境。</p></div></li>
+        <li><span class="step-no">1</span><div><h3 data-i18n="steps.t1">下载</h3><p data-i18n="steps.d1">在 Release 附件中下载 exe，或从应用商店获取。</p></div></li>
+        <li><span class="step-no">2</span><div><h3 data-i18n="steps.t2">安装</h3><p data-i18n="steps.d2">exe 双击安装，按提示完成即可，无需 Java 环境。</p></div></li>
         <li><span class="step-no">3</span><div><h3 data-i18n="steps.t3">选择设备，开始投屏</h3><p data-i18n="steps.d3">等待自动发现电视，点击设备旁的投屏图标即可开始。</p></div></li>
       </ol>
 
-      <p class="dl-alt reveal">
-        <span class="dl-alt-text"><strong data-i18n="dl.greenTitle">绿色免安装版</strong><span data-i18n="dl.greenDesc">解压即用，内置运行环境。</span></span>
-        <a href="/download?id=zip" data-i18n="dl.greenBtn">下载 SimpleTVCast.zip</a>
-      </p>
+      <article class="dl-green reveal">
+        <div class="dl-green-main">
+          <p class="dl-tag" data-i18n="dl.greenTag">绿色免安装版 · 下载方式</p>
+          <h3 data-i18n="dl.greenTitle">绿色免安装版提供ZIP压缩包，无需安装，解压后可直接运行</h3>
+          <p data-i18n="dl.greenTip">绿色免安装版请关注微信公众号「eguid」或加入官方 QQ 群，在群文件中下载。</p>
+        </div>
+        <div class="dl-green-ways">
+          <p><span data-i18n="dl.greenWechat">微信公众号</span><b>eguid</b></p>
+          <p><span data-i18n="dl.greenQq">官方 QQ 群</span><b>1092312834</b></p>
+          <a class="btn btn-outline" href="https://qm.qq.com/q/X8ZmaIfY6k" target="_blank" rel="noopener" data-i18n="dl.greenJoin">加入 QQ 群</a>
+        </div>
+      </article>
 
       <p class="dl-note reveal" data-i18n-html="dl.note">备用下载渠道：<a href="/download?id=gitee">Gitee 仓库</a>；内测与问题反馈：<a class="text-link" href="https://qm.qq.com/q/X8ZmaIfY6k" target="_blank" rel="noopener">QQ 群 1092312834</a>。微信公众号：eguid。软件免费商用，不限制功能与投屏台数。</p>
     </div>
@@ -623,7 +637,29 @@ var _hmt = _hmt || [];
 
       <ol class="timeline reveal">
         <li class="tl-item is-latest">
-          <div class="tl-head"><span class="tl-version">v6.0.3-beta</span><span class="tl-badge" data-i18n="log.latest">最新</span></div>
+          <div class="tl-head"><span class="tl-version">v6.0.5</span><span class="tl-badge" data-i18n="log.latest">最新</span></div>
+          <ul>
+            <li data-i18n="log.v605.1">6.0.5 已正式上架火绒应用商店，欢迎大家前往下载！</li>
+            <li data-i18n="log.v605.2">软件主界面启动性能优化，软件打开速度更快。</li>
+            <li data-i18n="log.v605.3">设备列表中的「更多」改为下拉菜单，不再直接弹出设备详情。</li>
+            <li data-i18n="log.v605.4">优化设备详情显示，设备信息展示更美观、更清晰。</li>
+            <li data-i18n="log.v605.5">优化帮助界面显示，不再出现特殊字符和乱码，帮助说明更规范清晰，便于排查问题。</li>
+            <li data-i18n="log.v605.6">查看日志时可直接跳转到系统文件管理器，查看软件日志。</li>
+            <li data-i18n="log.v605.7">多处细节优化：设备详情与帮助说明。</li>
+          </ul>
+        </li>
+        <li class="tl-item">
+          <div class="tl-head"><span class="tl-version">v6.0.4-beta</span><span class="tl-badge" data-i18n="log.publicBeta">公开测试版</span></div>
+          <ul>
+            <li data-i18n="log.v604.1">PPT 演示投屏优化，支持动态刷新。</li>
+            <li data-i18n="log.v604.2">应用图标重制，资源管理器、任务栏与安装器图标在大 / 小尺寸下都不再发糊。</li>
+            <li data-i18n="log.v604.3">采用新的打包器，不再提供 msi 安装包，只提供绿色免安装压缩包和 exe 安装包。</li>
+            <li data-i18n="log.v604.4">修复画面静止时推送失败会导致画面永久定格的问题。</li>
+            <li data-i18n="log.v604.5">修复镜像启动时首帧被重复推送的问题。</li>
+          </ul>
+        </li>
+        <li class="tl-item">
+          <div class="tl-head"><span class="tl-version">v6.0.3-beta</span></div>
           <ul>
             <li data-i18n="log.v603.1">极低延迟的实时镜像投屏，可替代原生 miracast 方案。</li>
             <li data-i18n="log.v603.2">新增「镜像投屏」配置：分辨率上限、帧率、码率与 PPT 推送帧率。</li>
