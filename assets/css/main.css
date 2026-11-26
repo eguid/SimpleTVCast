@@ -2576,6 +2576,168 @@ body::after {
 .series-list .reveal:nth-child(2) { transition-delay: 0.1s; }
 .series-list .reveal:nth-child(3) { transition-delay: 0.2s; }
 
+/* ---------- 15b. 安装成功页 ---------- */
+.install-hero {
+  padding-top: calc(var(--header-h) + 96px);
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.install-hero > .wrap {
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.install-check {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(201, 166, 107, 0.5);
+  border-radius: 50%;
+  background: rgba(201, 166, 107, 0.1);
+  color: var(--gold);
+  box-shadow: 0 0 70px -20px rgba(201, 166, 107, 0.7);
+}
+
+.install-check svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.install-hero h1 {
+  font-size: clamp(32px, 4.2vw, 50px);
+  line-height: 1.2;
+  color: var(--paper);
+  text-wrap: balance;
+}
+
+.install-sub {
+  max-width: 40em;
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(246, 242, 234, 0.68);
+}
+
+.install-channel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 6px 14px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  font-size: 13px;
+  color: rgba(246, 242, 234, 0.66);
+}
+
+.install-channel b {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--gold);
+}
+
+.install-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.install-section {
+  background: var(--paper);
+}
+
+.install-section--alt {
+  background: var(--paper-2);
+}
+
+.install-section .section-head {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.install-section .section-sub {
+  margin-inline: auto;
+}
+
+.install-log {
+  max-width: 880px;
+  margin-inline: auto;
+  border-top: 1px solid var(--line);
+}
+
+.install-log li {
+  position: relative;
+  padding: 15px 0 15px 26px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.install-log li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 24px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+.install-more {
+  max-width: 880px;
+  margin: 26px auto 0;
+  text-align: center;
+}
+
+.install-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.install-steps li {
+  padding: 28px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-light);
+}
+
+.install-steps .step-no {
+  font-size: 24px;
+}
+
+.install-steps h3 {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.install-steps p {
+  margin-top: 8px;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.install-cta--light {
+  margin-top: 40px;
+}
+
 /* ---------- 16. 响应式 ---------- */
 @media (max-width: 1199px) {
   :root {
@@ -2924,6 +3086,34 @@ body::after {
 
   .tut-help {
     padding: 22px 20px;
+  }
+
+  .install-hero {
+    padding-top: calc(var(--header-h) + 64px);
+    padding-bottom: 72px;
+  }
+
+  .install-hero h1 {
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  .install-sub {
+    font-size: 16px;
+  }
+
+  .install-check {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 22px;
+  }
+
+  .install-check svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .install-steps {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .dl-green {
